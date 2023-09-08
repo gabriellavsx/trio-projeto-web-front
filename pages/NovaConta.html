@@ -6,21 +6,23 @@
     <title>Nova Conta</title>
 </head>
 <body>
-    <form action="index.html">
-        <p>Criar uma Conta no Satisfying.you</p>
+    <div class="container">
+        <form action="index.html">
+            <p>Criar uma Conta no Satisfying.you</p>
+    
+            <label for="txtEmail">Email</label><br>
+            <input type="email" id="txtEmail" name="email" required><br>
+    
+            <label for="txtSenha">Senha</label><br>
+            <input type="password" id="txtSenha" name="senha" required><br>
+    
+            <label for="txtSenha">Repetir Senha</label><br>
+            <input type="password" id="txtSenha" name="senha" required><br>
+            <p>Senhas não conferem</p>
+            <button type="submit">Criar</button>
+        </form>
+    </div>
 
-        <label for="txtEmail">Email</label><br>
-        <input type="email" id="txtEmail" name="email" required><br>
-
-        <label for="txtSenha">Senha</label><br>
-        <input type="password" id="txtSenha" name="senha" required><br>
-
-        <label for="txtSenha">Repetir Senha</label><br>
-        <input type="password" id="txtSenha" name="senha" required><br>
-        <p>Senhas não conferem</p>
-        <button type="submit">Criar</button>
-
-    </form>
 </main>
 </body>
 </html>
