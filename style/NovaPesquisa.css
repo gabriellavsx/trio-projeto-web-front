@@ -3,7 +3,7 @@
     height:320px;
     padding: 20px;
     border: 1px solid #8c00ff;
-    background-color: #6300b4;
+    background-color: #5a00a3;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
@@ -11,6 +11,10 @@
 
 form{
     text-align: left;
+}
+
+body{
+    background-color: #6300b4;
 }
 
 label{
