@@ -1,17 +1,25 @@
 .container{
     width: 400px;
-    height:320px;
+    height: auto;
     padding: 20px;
     border: 1px solid #8c00ff;
     background-color: #5a00a3;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
-    display:flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 form{
     text-align: left;
+    flex-grow: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
 body{
@@ -48,12 +56,9 @@ input[type="text"], [type="date"], [type="file"]{
 input[type="submit"]{
     background-color: blueviolet;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    
+    align-self:flex-end; 
 }

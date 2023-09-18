@@ -20,7 +20,7 @@ form{
 .form-group {
     display: flex;
     flex-direction: column;
-  }
+}
 
 body{
     background-color: #6300b4;
@@ -61,5 +61,4 @@ input[type="submit"]{
     border-radius: 5px;
     cursor: pointer;
     align-self:flex-end; 
-    
 }
