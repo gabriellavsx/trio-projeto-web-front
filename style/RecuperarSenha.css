@@ -30,8 +30,12 @@ label{
     text-align: center;
     color:#fff;
 }
-
-input[type="email"], [type="password"]{
+.subtituloForm{
+    font-size: 20px;
+    text-align: center;
+    color:#fff;
+}
+input[type="email"]{
     width: 100%;
     width: 380px;
     padding: 10px;
@@ -55,13 +59,4 @@ button[type="submit"]{
 
 .invalidos{
     color: orangered;
-}
-.esqueciConta{
-    color: aqua;
-    padding-left: 60px;
-}
-
-.criarConta{
-    color: aqua;
-    padding-right: 150px;
 }

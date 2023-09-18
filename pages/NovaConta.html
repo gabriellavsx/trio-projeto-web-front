@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/NovaConta.css">
     <title>Nova Conta</title>
 </head>
 <body>
-    <div class="container">
-        <form action="index.html">
-            <p>Criar uma Conta no Satisfying.you</p>
-    
-            <label for="txtEmail">Email</label><br>
-            <input type="email" id="txtEmail" name="email" required><br>
-    
-            <label for="txtSenha">Senha</label><br>
-            <input type="password" id="txtSenha" name="senha" required><br>
-    
-            <label for="txtSenha">Repetir Senha</label><br>
-            <input type="password" id="txtSenha" name="senha" required><br>
-            <p>Senhas não conferem</p>
-            <button type="submit">Criar</button>
-        </form>
-    </div>
+    <header>
+        <h1 class="tituloPagina">Satisfying.you</h1>
+    </header>
+    <main>
+        <div class="container">
+            <form action="index.html">
+                <h2 class="tituloForm">Criar uma Conta no Satisfying.you</h2>
+        
+                <label for="txtEmail">Email</label><br>
+                <input type="email" id="txtEmail" name="email" required><br>
+        
+                <label for="txtSenha">Senha</label><br>
+                <input type="password" id="txtSenha" name="senha" required><br>
+        
+                <label for="txtSenha">Repetir Senha</label><br>
+                <input type="password" id="txtSenha" name="senha" required>
+                <p class="senhas">Senhas não conferem</p><br>
+                <button type="submit">Criar</button>
+            </form>
+        </div>
+    </main>
 
 </main>
 </body>

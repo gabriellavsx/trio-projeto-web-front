@@ -53,15 +53,6 @@ button[type="submit"]{
     
 }
 
-.invalidos{
+.senhas{
     color: orangered;
-}
-.esqueciConta{
-    color: aqua;
-    padding-left: 60px;
-}
-
-.criarConta{
-    color: aqua;
-    padding-right: 150px;
 }
