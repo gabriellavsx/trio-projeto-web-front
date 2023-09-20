@@ -4,14 +4,14 @@
     text-align: left;
 }
 body{
-    background-color: #380a5e;
+    background-color: #372775;
 }
 .container{
     width: 400px;
     height:320px;
     padding: 20px;
     border: 1px solid rgb(243, 236, 202);
-    background-color: #380a5e;
+    background-color: #372775;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
