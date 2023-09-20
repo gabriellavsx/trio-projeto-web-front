@@ -10,7 +10,7 @@ body{
     width: 400px;
     height:320px;
     padding: 20px;
-    border: 1px solid rgb(243, 236, 202);
+    border: 1px solid #737373;
     background-color: #372775;
     border-radius: 10px;
     margin: 0 auto;
@@ -39,7 +39,7 @@ input[type="email"], [type="password"]{
     background-color: white;
 }
 button[type="submit"]{
-    background-color:rgb(102, 214, 102);
+    background-color:#37BD6D;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -55,14 +55,14 @@ button[type="submit"]{
 }
 
 .invalidos{
-    color: rgb(250, 69, 4);
+    color: #FD7979;
 }
 .esqueciSenha{
-    color: aqua;
+    color: #3F92C5;
     padding-left: 72px;
 }
 
 .criarConta{
-    color: aqua;
+    color:#3F92C5;
     padding-right: 150px;
 }
