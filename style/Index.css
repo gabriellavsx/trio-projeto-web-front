@@ -4,14 +4,14 @@
     text-align: left;
 }
 body{
-    background-color: #6300b4;
+    background-color: #380a5e;
 }
 .container{
     width: 400px;
     height:320px;
     padding: 20px;
-    border: 1px solid #8c00ff;
-    background-color: #6300b4;
+    border: 1px solid rgb(243, 236, 202);
+    background-color: #380a5e;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
@@ -35,10 +35,8 @@ input[type="email"], [type="password"]{
     width: 100%;
     width: 380px;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px;
-    background-color: rgba(255, 255, 255, 0.589);
-    border-radius: 5px;
+    padding-bottom: 10px;
+    background-color: white;
 }
 button[type="submit"]{
     background-color:rgb(102, 214, 102);
@@ -52,13 +50,16 @@ button[type="submit"]{
     bottom: 20px;
     
 }
+::placeholder{
+    color: rgb(5, 69, 206);
+}
 
 .invalidos{
-    color: orangered;
+    color: rgb(250, 69, 4);
 }
-.esqueciConta{
+.esqueciSenha{
     color: aqua;
-    padding-left: 60px;
+    padding-left: 72px;
 }
 
 .criarConta{
