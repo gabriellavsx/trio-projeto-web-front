@@ -1,6 +1,7 @@
 .tituloPagina{
     color: #fff;
-    font-size: 30px;
+    font-family: 'Averia Libre';
+    font-size: 24px;
     text-align: left;
 }
 body{
@@ -22,7 +23,7 @@ form{
 }
 
 label{
-    font-size: 20px;
+    font-size: 24px;
     color:#fff;
 }
 .tituloForm{
@@ -41,6 +42,8 @@ input[type="email"], [type="password"]{
 button[type="submit"]{
     background-color:#37BD6D;
     color: #fff;
+    font-size: 20px;
+    width: 134px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -51,7 +54,8 @@ button[type="submit"]{
     
 }
 ::placeholder{
-    color: rgb(5, 69, 206);
+    color: #3F92C5;
+    font-size: 18px;
 }
 
 .invalidos{
