@@ -1,7 +1,7 @@
 .tituloPagina{
     color: #fff;
     font-family: 'Averia Libre';
-    font-size: 24px;
+    font-size: 40px;
     text-align: left;
 }
 body{
@@ -44,10 +44,10 @@ button[type="submit"]{
     color: #fff;
     font-size: 20px;
     width: 134px;
+    height: 40px;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -60,13 +60,17 @@ button[type="submit"]{
 
 .invalidos{
     color: #FD7979;
+    padding-bottom: 25px;
+    font-size: 16px;
 }
 .esqueciSenha{
     color: #3F92C5;
-    padding-left: 72px;
+    padding-left: 59px;
+    font-size: 18px;
 }
 
 .criarConta{
     color:#3F92C5;
     padding-right: 150px;
+    font-size: 20px;
 }

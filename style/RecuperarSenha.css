@@ -1,17 +1,19 @@
 .tituloPagina{
     color: #fff;
-    font-size: 30px;
+    font-family: 'Averia Libre';
+    font-size: 40px;
     text-align: left;
 }
+
 body{
-    background-color: #6300b4;
+    background-color: #372775;
 }
 .container{
     width: 400px;
     height:320px;
     padding: 20px;
-    border: 1px solid #8c00ff;
-    background-color: #6300b4;
+    border: 1px solid #737373;
+    background-color: #372775;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
@@ -22,16 +24,17 @@ form{
 }
 
 label{
-    font-size: 20px;
+    font-size: 24px;
     color:#fff;
 }
+
 .tituloForm{
     font-size: 25px;
     text-align: center;
     color:#fff;
 }
 .subtituloForm{
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     color:#fff;
 }

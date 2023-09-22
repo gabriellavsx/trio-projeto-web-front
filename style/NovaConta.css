@@ -1,17 +1,18 @@
 .tituloPagina{
     color: #fff;
-    font-size: 30px;
+    font-family: 'Averia Libre';
+    font-size: 40px;
     text-align: left;
 }
 body{
-    background-color: #6300b4;
+    background-color: #372775;
 }
 .container{
     width: 400px;
     height:320px;
     padding: 20px;
-    border: 1px solid #8c00ff;
-    background-color: #6300b4;
+    border: 1px solid #737373;
+    background-color: #372775;
     border-radius: 10px;
     margin: 0 auto;
     position: relative;
@@ -22,7 +23,7 @@ form{
 }
 
 label{
-    font-size: 20px;
+    font-size: 24px;
     color:#fff;
 }
 .tituloForm{
@@ -35,18 +36,19 @@ input[type="email"], [type="password"]{
     width: 100%;
     width: 380px;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px;
-    background-color: rgba(255, 255, 255, 0.589);
-    border-radius: 5px;
+    padding-bottom: 10px;
+    background-color: white;
+
 }
 button[type="submit"]{
-    background-color:rgb(102, 214, 102);
+    background-color:#37BD6D;
     color: #fff;
+    font-size: 20px;
+    width: 134px;
+    height: 40px;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -54,5 +56,12 @@ button[type="submit"]{
 }
 
 .senhas{
-    color: orangered;
+    color: #FD7979;
+    padding-left: 3px;
+    padding-bottom: 25px;
+    font-size: 16px;
+}
+::placeholder{
+    color: #3F92C5;
+    font-size: 18px;
 }
