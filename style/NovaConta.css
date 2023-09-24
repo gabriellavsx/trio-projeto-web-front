@@ -47,7 +47,7 @@ button[type="submit"]{
     width: 134px;
     height: 40px;
     padding: 10px 20px;
-    border: none;
+    border: 1px;
     border-radius: 10px;
     position: absolute;
     right: 20px;
