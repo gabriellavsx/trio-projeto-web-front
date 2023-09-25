@@ -6,15 +6,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #6300b4;
+    background-color: #372775;
 }
 
 .container {
     width: 300px;
     height: 300px;
-    background-color: #b181ff;
+    background-color: #ffff;
     margin: 0 30px;
     display: flex;
+    flex-direction:column ;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -27,9 +28,78 @@ body {
 
 .tituloPagina{
     color: #fff;
-    font-size: 30px;
     text-align: left;
+    font-weight: bold;
     position: absolute;
     top: 10px;
     left: 10px;
+    font-family: 'Averia Libre';
+    font-size: 40px;
+}
+
+.tituloBox{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+.icon{
+    width: 100px;
+    height: 110px;
+}
+
+.icon-2{
+    width: 50px;
+    height: 100px;
+}
+
+.subtituloBox{
+    font-size:15px;
+    color:gray;
+    position: fixed;
+    margin-top: 215px;
+}
+
+.busca-container{
+    position: fixed;
+    margin-top: -100px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    width: 86%;
+}
+
+.busca-input{
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    background: url(../icons/lupa-icon.png) no-repeat 10px center;
+    background-size:20px 20px ;
+    background-color: white;
+
+}
+
+.botaoNovaPesquisa{
+        background-color:#37BD6D;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        width: auto;
+        height: 40px;
+        padding: 10px 20px;
+        border: 1px;
+        border-radius: 10px;
+        position: fixed;
+        right: 120px;
+        bottom: 685px;
+}
+
+.sair{
+    color: #3F92C5;
+    padding-left: 59px;
+    font-size: 18px;
+    position: fixed;
+    right: 60px;
+    bottom: 690px;
+    
 }
