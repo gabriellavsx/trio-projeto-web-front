@@ -61,12 +61,15 @@ body {
 }
 
 .busca-container{
-    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
     margin-top: -100px;
     margin-left: 30px;
     display: flex;
     align-items: center;
-    width: 86%;
+    width: 1377px;
 }
 
 .busca-input{
@@ -80,26 +83,38 @@ body {
 }
 
 .botaoNovaPesquisa{
-        background-color:#37BD6D;
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
-        width: auto;
-        height: 40px;
-        padding: 10px 20px;
-        border: 1px;
-        border-radius: 10px;
-        position: fixed;
-        right: 120px;
-        bottom: 685px;
+    background-color:#37BD6D;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px;
+    border-radius: 10px;
+    
+}
+
+.containerBotao{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:20px;
+    right: 150px;
+            
+}
+
+.containerSair{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:30px;
+    right: 90px;
 }
 
 .sair{
     color: #3F92C5;
-    padding-left: 59px;
     font-size: 18px;
-    position: fixed;
-    right: 60px;
-    bottom: 690px;
-    
 }
