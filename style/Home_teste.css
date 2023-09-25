@@ -7,6 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #372775;
+    font-family: 'Averia Libre'
 }
 
 .container {
@@ -33,13 +34,13 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-family: 'Averia Libre';
     font-size: 40px;
 }
 
 .tituloBox{
     font-size: 30px;
-    color: black;
+    color: #3F92C5;
+    margin: 10px;
     text-align: center;
 }
 
@@ -79,6 +80,7 @@ body {
     background: url(../icons/lupa-icon.png) no-repeat 10px center;
     background-size:20px 20px ;
     background-color: white;
+    padding-left: 40px;
 
 }
 
@@ -100,7 +102,7 @@ body {
     width: auto;
     height: auto;
     top:20px;
-    right: 150px;
+    right: 100px;
             
 }
 
@@ -111,7 +113,7 @@ body {
     width: auto;
     height: auto;
     top:30px;
-    right: 90px;
+    right: 50px;
 }
 
 .sair{
