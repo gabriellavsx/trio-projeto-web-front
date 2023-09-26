@@ -1,0 +1,143 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #372775;
+    font-family: 'Averia Libre'
+}
+
+main{
+    margin: auto;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    background-color: #ffff;
+    margin: 0 30px;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-wrapper {
+    display: flex;
+}
+
+.tituloPagina{
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+}
+
+.tituloBox{
+    font-size: 30px;
+    color: #3F92C5;
+    margin: 10px;
+    text-align: center;
+}
+
+.navbar{
+    background-color: gray;
+    position: fixed;
+    width: 100%;
+    top: 10px;
+    
+}
+
+.icon{
+    width: 100px;
+    height: 110px;
+}
+
+.icon-2{
+    width: 50px;
+    height: 100px;
+}
+
+.icon-smile{
+    width: 40px;
+    height: 40px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.subtituloBox{
+    font-size:15px;
+    color:gray;
+    position: fixed;
+    margin-top: 215px;
+}
+
+.busca-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
+    margin-top: -100px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    width: 1377px;
+}
+
+.busca-input{
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    background: url(../icons/lupa-icon.png) no-repeat 10px center;
+    background-size:20px 20px ;
+    background-color: white;
+    padding-left: 40px;
+
+}
+
+.botaoNovaPesquisa{
+    background-color:#37BD6D;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.containerBotao{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:20px;
+    right: 100px;
+            
+}
+
+.containerSair{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:30px;
+    right: 50px;
+}
+
+.sair{
+    color: #3F92C5;
+    font-size: 18px;
+}

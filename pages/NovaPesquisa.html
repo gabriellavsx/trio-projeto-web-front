@@ -9,17 +9,19 @@
     </head>
 
     <body>
-        <header>
-            <h1 class="tituloPagina">Satisfying.you</h1>
-        </header>
-        
+
+        <div class="tituloPagina">
+            <img class="icon-smile" src="../icons/smile-icon.png" alt="">
+            <header>Satisfying.you</header>
+        </div>   
+
         <div class="container">
-            <form action="Coleta.html" method="get">
+            <form action="Home.html" method="get">
                 <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
                 
                 <div class="form-group">
                     <label for="txtNomePesquisa">Nome da pesquisa</label><br>
-                    <input type="text" id="txtNomePesquisa" name="nomePesquisa" required><br>
+                    <input type="text" id="txtNomePesquisa" name="nomePesquisa" placeholder="Carnaval 2023"><br>
                 </div>
                 
                 <div class="form-group">
@@ -32,9 +34,13 @@
                     <input type="file" id="imgPesquisa" name="imgPesq" required><br>    
                 </div>
     
-                <input type="submit" value="Enviar">
-                
-    
+                <div class="containerImg">
+                    <img src="../assets/mascara.png" alt="">
+                </div>
+
+                <div class="containerCriar">
+                    <input type="submit" value="Criar">
+                </div>
             </form>
         </div>
     </body>
