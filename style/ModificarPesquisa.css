@@ -61,6 +61,11 @@ input[type="text"], [type="date"], [type="file"]{
     font-size: 16px;
 }
 
+::placeholder{
+    color: #3F92C5;
+    font-size: 18px;
+}
+
 input[type="submit"]{
     background-color: #37BD6D;
     font-size: 14px;
