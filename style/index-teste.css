@@ -1,15 +1,41 @@
 .tituloPagina{
     color: #fff;
-    font-family: 'Averia Libre';
-    font-size: 40px;
     text-align: left;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+}
+
+.navbar{
+    background-color: gray;
+    position: fixed;
+    width: 100%;
+    top: 10px;
+}
+
+.icon-smile{
+    width: 40px;
+    height: 40px;
+    margin-top: 3px;
+    margin-right: 10px;
 }
 body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     background-color: #372775;
+    font-family: 'Averia Libre'
 }
 .container-pai{
     width: 400px;
-    height:400px;
+    height:370px;
     padding: 20px;
     border: 1px solid #737373;
     background-color: #372775;
