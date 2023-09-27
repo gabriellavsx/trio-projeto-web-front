@@ -7,29 +7,44 @@
     <title>Index</title>
 </head>
 <body>
-    <header>
-        <div>
-            <h1 class="tituloPagina">Satisfying.you</h1>
+    <nav class="navbar">
+        <div class="tituloPagina">
             <img class="icon-smile" src="../icons/smile-icon.png" alt="">
+            <header>Satisfying.you</header>
         </div>
-        
-
-    </header>
+    </nav>
     <main>
-        <div class="container">
+        <div class="container-pai">
             <form action="Home.html">
                 <h2 class="tituloForm">Fazer login</h2>
-    
-                <label for="txtEmail">Email</label><br>
-                <input type="email" id="txtEmail" name="email" placeholder="jurandir.pereira@hotmail.com" required><br>
-    
-                <label for="txtSenha">Senha</label><br>
-                <input type="password" id="txtSenha" name="senha" placeholder="*********" required>
-    
-                <p class="invalidos">E-mail e/ou senhas inválidos.<span><a href="RecuperarSenha.html" target="_self" class="esqueciSenha">Esqueci minha senha</a><br></span></p>
-                
-                <a href="NovaConta.html" target="_self" class="criarConta">Criar conta <span></span></a>
-                <button type="submit">Entrar</button>
+        
+                <div class="column">
+                    <label for="txtEmail">Email</label><br>
+                    <input type="email" id="txtEmail" name="email" placeholder="jurandir.pereira@hotmail.com" required><br>
+                </div>
+
+                <div class="column">
+                    <label for="txtSenha">Senha</label><br>
+                    <input type="password" id="txtSenha" name="senha" placeholder="*********" required>
+                </div>
+
+                <div class="row1">
+                    <div class="centralizado-horizontal1">
+                        <p class="invalidos">E-mail e/ou senhas inválidos.</p>
+                    </div>
+                    <div class="centralizado-horizontal1">
+                        <a href="RecuperarSenha.html" target="_self" class="esqueciSenha">Esqueci minha senha</a>
+                    </div>
+                </div>
+
+                <div class="row2">
+                    <div class="centralizado-horizontal2">
+                        <a href="NovaConta.html" target="_self" class="criarConta">Criar conta</a>
+                    </div>
+                    <div class="centralizado-horizontal2">
+                        <button type="submit">Entrar</button>
+                    </div>
+                </div>
             </form>
         </div>
     </main>

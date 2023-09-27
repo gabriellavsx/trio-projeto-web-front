@@ -5,21 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/RecuperarSenha.css">
     <title>Recuperar Senha</title>
+
 </head>
 <body>
     <header>
-        <h1 class="tituloPagina">Satisfying.you</h1>
+        <nav class="navbar">
+            <div class="tituloPagina">
+                <img class="icon-smile" src="../icons/smile-icon.png" alt="">
+                <header>Satisfying.you</header>
+            </div>
+        </nav>
     </header>
 
     <main>
         <div class="container">
             <form action="Index.html">
-                <p class="tituloForm">Redefina a sua senha</p>
-                <p class="subtituloForm">Digite o seu e-mail para recuperação</p>
-        
-                <label for="txtEmail">E-mail</label><br>
-                <input type="email" id="txtEmail" name="email" placeholder="jurandir.pereira@hotmail.com" required><br>
-                <p class="invalidos">Formato inválido de e-mail</p>
+                <div class="titulos">
+                    <div  class="tituloForm">
+                        <p>Redefina a sua senha</p>
+                    </div>
+                    <div class="subtituloForm">
+                        <p>Digite o seu e-mail para recuperação</p>
+                    </div>
+
+                </div>
+
+                <div class="column">
+                    <label for="txtEmail">E-mail</label><br>
+                    <input type="email" id="txtEmail" name="email" placeholder="jurandir.pereira@hotmail.com" required><br>
+                    <p class="invalidos">Formato inválido de e-mail</p>
+                </div>
+
                 <button type="submit">Recuperar</button>
             </form>
         </div>

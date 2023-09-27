@@ -1,17 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap');
+
 .tituloPagina{
     color: #fff;
-    font-family: 'Averia Libre';
-    font-size: 40px;
     text-align: left;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
 }
 
 body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     background-color: #372775;
 }
+.icon-smile{
+    width: 40px;
+    height: 40px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
 .container{
-    width: 400px;
-    height:320px;
-    padding: 20px;
+    width: 488px;
+    height:382px;
+    padding: 20px 30px;
     border: 1px solid #737373;
     background-color: #372775;
     border-radius: 10px;
@@ -20,6 +39,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 form{
@@ -29,24 +49,43 @@ form{
 label{
     font-size: 24px;
     color:#fff;
+    margin:0;
 }
 
+.titulos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
 .tituloForm{
-    font-size: 25px;
+    font-size: 24px;
     text-align: center;
     color:#fff;
+
 }
 .subtituloForm{
-    font-size: 18px;
+    font-size: 21px;
     text-align: center;
     color:#fff;
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
 input[type="email"]{
     width: 100%;
-    width: 380px;
+    width: 400px;
     padding: 10px;
+    height: 25px;
     padding-bottom: 10px;
     background-color: white;
+    margin:0px;
 }
 button[type="submit"]{
     background-color:#37BD6D;
@@ -63,7 +102,8 @@ button[type="submit"]{
 }
 
 .invalidos{
-    color: orangered;
+    color: #FD7979;
+    font-size: 16px;
 }
 
 ::placeholder{
