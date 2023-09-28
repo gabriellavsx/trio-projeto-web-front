@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap');
+
 .tituloPagina{
     color: #fff;
     text-align: left;
@@ -9,7 +11,7 @@
     left: 10px;
     font-size: 40px;
 }
-.navbar{
+.cabecalho{
     position: fixed;
     width: 100%;
     top: 10px;
@@ -32,17 +34,18 @@ body{
     font-family: 'Averia Libre'
 }
 .container{
-    width: 400px;
-    height:320px;
-    padding: 20px;
+    width: 480px;
+    height:455px;
     border: 1px solid #737373;
     background-color: #372775;
     border-radius: 10px;
+    padding: 18px;
     margin: 0 auto;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content:start;
 }
 
 form{
@@ -61,7 +64,7 @@ label{
 
 input[type="email"], [type="password"]{
     width: 100%;
-    width: 380px;
+    width: 424px;
     padding: 10px;
     padding-bottom: 10px;
     background-color: white;
@@ -81,6 +84,7 @@ button[type="submit"]{
     bottom: 20px;
     display: flex;
     justify-content: center;
+    font-family: Averia Libre, Arial, Helvetica, sans-serif;
 }
 
 .senhas{
@@ -92,5 +96,5 @@ button[type="submit"]{
 ::placeholder{
     color: #3F92C5;
     font-size: 18px;
-
+    font-family: Averia Libre, Arial, Helvetica, sans-serif;
 }
