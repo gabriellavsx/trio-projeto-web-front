@@ -17,6 +17,13 @@
     top: 10px;
 
 }
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+}
 .icon-smile{
     width: 40px;
     height: 40px;
@@ -70,7 +77,7 @@ input[type="email"], [type="password"]{
     background-color: white;
 
 }
-button[type="submit"]{
+input[type="submit"]{
     background-color:#37BD6D;
     color: #fff;
     font-size: 20px;
@@ -85,6 +92,11 @@ button[type="submit"]{
     display: flex;
     justify-content: center;
     font-family: Averia Libre, Arial, Helvetica, sans-serif;
+}
+.botao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .senhas{
