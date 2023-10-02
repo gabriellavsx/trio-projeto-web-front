@@ -92,6 +92,7 @@ input[type="submit"]{
     display: flex;
     justify-content: center;
     font-family: Averia Libre, Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 .botao{
     display: flex;
