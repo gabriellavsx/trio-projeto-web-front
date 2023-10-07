@@ -35,6 +35,9 @@ body{
     height: 100vh;
     background-color: #372775;
 }
+a{
+    text-decoration: none;
+}
 .container-pai{
     width: 480px;
     height:455px;
