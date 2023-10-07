@@ -40,7 +40,7 @@ a{
 }
 .container-pai{
     width: 480px;
-    height:455px;
+    height:420px;/*455**/
     border: 1px solid #737373;
     background-color: #372775;
     border-radius: 10px;
@@ -72,6 +72,7 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 70px;
 }
 .centralizado-horizontal1{
     display: flex;
@@ -118,10 +119,8 @@ button[type="submit"]{
     position: absolute;
     right: 35px;
     bottom: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 ::placeholder{
     color: #3F92C5;
