@@ -107,7 +107,7 @@ button[type="submit"]{
 .invalidos{
     color: #FD7979;
     font-size: 16px;
-    margin: 5px;
+    margin: 0px;
 }
 
 ::placeholder{
