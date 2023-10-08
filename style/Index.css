@@ -12,13 +12,6 @@
     font-size: 40px;
 }
 
-.cabecalho{
-    background-color: gray;
-    position: fixed;
-    width: 100%;
-    top: 10px;
-}
-
 .icon-smile{
     width: 40px;
     height: 40px;
@@ -30,17 +23,16 @@ body{
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #372775;
 }
-a{
-    text-decoration: none;
-}
+
 .container-pai{
     width: 480px;
-    height:420px;/*455**/
+    height:410px;/*455**/
     border: 1px solid #737373;
     background-color: #372775;
     border-radius: 10px;
@@ -65,14 +57,13 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
- 
 }
 .row2{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 70px;
+    padding-top: 90px;
 }
 .centralizado-horizontal1{
     display: flex;
@@ -131,10 +122,12 @@ button[type="submit"]{
 .invalidos{
     color: #FD7979;
     font-size: 16px;
+    margin: 0px;
 }
 .esqueciSenha{
     color: #3F92C5;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .criarConta{
