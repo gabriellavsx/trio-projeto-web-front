@@ -15,6 +15,31 @@
     margin-top: 85px;
 }
 
+.espacoHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    padding-left: 12px;
+    align-items: center;
+}
+
+h1 {
+    font-size: 40px;
+    color: #FFFFFF;
+}
+
+.imagemLogo {
+    margin-right: 12px;
+    height: 40px;
+}
+
 form{
     text-align: left;
     flex-grow: 1;
