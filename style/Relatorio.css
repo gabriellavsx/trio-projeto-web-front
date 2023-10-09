@@ -48,12 +48,6 @@ h1 {
 .grafico {
     height: 500px;
     width: 500px;
-    border-radius: 50%;
-    background-image: conic-gradient(#F1CE7E 72deg,
-            #6994FE 0 110deg,
-            #EA7288 0 160deg,
-            #53D8D8 0 240deg,
-            #5FCDA4 0 360deg);
 }
 
 .legendas {
