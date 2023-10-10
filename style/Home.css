@@ -58,9 +58,9 @@ a{
 
 .navbar{
 
-   position: fixed;
+    position: fixed;
     width: 100%;
-    top: 10px;
+    top: 1px;
     
 }
 

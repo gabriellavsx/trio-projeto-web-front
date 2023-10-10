@@ -48,8 +48,8 @@ label{
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 36px;
-    left: 26px;
+    top: 10px;
+    left: 10px;
     font-size: 40px;
 }
 
@@ -92,7 +92,6 @@ input[type="submit"]{
     justify-content: flex-start;
     width: 20px;
     height: 120px;
-    margin-top: -20px;
 }
 
 .icon-smile{
