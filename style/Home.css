@@ -58,7 +58,7 @@ a{
 
 .navbar{
 
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 1px;
     
@@ -84,7 +84,7 @@ a{
 .subtituloBox{
     font-size:15px;
     color:gray;
-    position: fixed;
+    position: absolute;
     margin-top: 215px;
 }
 
