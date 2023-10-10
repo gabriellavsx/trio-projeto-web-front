@@ -17,12 +17,12 @@
 
 form{
     text-align: left;
-    flex-grow: 1;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 body{
