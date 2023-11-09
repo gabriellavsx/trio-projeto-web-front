@@ -47,6 +47,20 @@
                 </form>
             </div>
         </main>
+
+        <script>
+            function cadastrarPesquisa(){
+                var nomePesquisa = document.getElementById('txtNomePesquisa').value;
+                var dataPesquisa = document.getElementById('dtPesquisa').value;
+                var imagemPesquisa =document.getElementById('imgPesquisa').value;
+
+                if(imagemPesquisa.files.length > 0){
+                    var imagem = imagemPesquisa.files[0];
+                    localStorage.setItem('imagemPesquisa')
+                    //vou terminar ainda ...
+                }
+            }
+        </script>
     </body>
 
 
