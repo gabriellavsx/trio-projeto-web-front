@@ -15,29 +15,26 @@
         </header>
         <main>
             <div class="container">
-                <form action="Index.html">
+                <form onsubmit="cadastrarUsuario(); return false;" action="Index.html">
                     <p class="tituloForm">Criar uma Conta no Satisfying.you</p><br>
 
                     <div class="column">
                         <label for="txtEmail">E-mail</label>
-                        <input type="email" id="txtEmail" name="email"
-                            placeholder="jurandir.pereira@hotmail.com">
+                        <input type="email" id="txtEmail" name="email">
                     </div>
 
                     <div class="column">
                         <label for="txtSenha">Senha</label>
-                        <input type="password" id="txtSenhaRepetir" name="senha"
-                            placeholder="*********">
+                        <input type="password" id="txtSenhaRepetir" name="senha">
                     </div>
 
                     <div class="column">
                         <label for="txtSenha">Repetir Senha</label>
-                        <input type="password" id="txtSenha" name="senha"
-                            placeholder="*********">
+                        <input type="password" id="txtSenha" name="senha">
                     </div>
 
                     <div class="column">
-                        <p class="senhas">Senhas não conferem</p>
+                        <p id="erroSenhas" class="senhas"></p>
                     </div>
 
                     <div class="containerCriar">
@@ -48,5 +45,27 @@
             </div>
         </main>
 
+        <script>
+            function cadastrarUsuario() {
+                var email = document.getElementById('txtEmail').value;
+                var senha = document.getElementById('txtSenha').value;
+                var senhaRepetir = document.getElementById('txtSenhaRepetir').value;
+
+                if (senha === senhaRepetir) {
+                    var novoUsuario = {
+                        email: email,
+                        senha: senha
+                    };
+
+                    var usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+                    usuarios.push(novoUsuario);
+                    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+                    window.location.href = 'Index.html';
+                } else {
+                    document.getElementById('erroSenhas').innerHTML = 'Senhas não conferem';
+                }
+            }
+        </script>
     </body>
 </html>

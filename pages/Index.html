@@ -17,24 +17,22 @@
         </header>
         <main>
             <div class="container-pai">
-                <form action="Home.html">
+                <form onsubmit="login(); return false;"  action="Home.html">
                     <p class="tituloForm">Fazer login</p>
 
                     <div class="column">
                         <label for="txtEmail">E-mail</label>
-                        <input type="email" id="txtEmail" name="email"
-                            placeholder="jurandir.pereira@hotmail.com">
+                        <input type="email" id="txtEmail" name="email" required>
                     </div>
 
                     <div class="column">
                         <label for="txtSenha">Senha</label>
-                        <input type="password" id="txtSenha" name="senha"
-                            placeholder="*********">
+                        <input type="password" id="txtSenha" name="senha" required>
                     </div>
 
                     <div class="row1">
                         <div class="centralizado-horizontal1">
-                            <p class="invalidos">E-mail e/ou senhas inválidos.</p>
+                            <p id="invalidos" class="invalidos"></p>
                         </div>
                         <div class="centralizado-horizontal1">
                             <a href="RecuperarSenha.html" target="_self"
@@ -50,5 +48,31 @@
                 </form>
             </div>
         </main>
+
+
+        <script>
+            function login() {
+                var email = document.getElementById('txtEmail').value;
+                var senha = document.getElementById('txtSenha').value;
+
+                // Validar campos de entrada (por exemplo, verificar se não estão vazios)
+                if (!email || !senha) {
+                    alert('Por favor, preencha todos os campos.');
+                    return false;
+                }
+
+                var usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+                
+                var usuarioAutenticado = usuarios.find(function (usuario) {
+                    return usuario.email === email && usuario.senha === senha;
+                });
+
+                if (usuarioAutenticado) {
+                    window.location.href = 'Home.html';
+                } else {
+                    document.getElementById('invalidos').innerHTML = 'E-mail/Senha inválidos';
+                }
+            }
+        </script>
     </body>
 </html>
