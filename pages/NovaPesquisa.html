@@ -19,7 +19,7 @@
     </a>
         <main>
             <div class="container">
-                <form action="Home.html" method="get">
+                <form action="Home.html" method="get" onsubmit="cadastrarPesquisa(); return false">
                     <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
                     
                     <div class="form-group">
@@ -50,26 +50,48 @@
 
         
         <script>
-            //ainda não está funcionando :(
+            // // ainda não está funcionando :(
+            // function cadastrarPesquisa(){
+            //     var nomePesquisa = document.getElementById('txtNomePesquisa').value;
+            //     var dataPesquisa = document.getElementById('dtPesquisa').value;
+            //     var imagemPesquisa =document.getElementById('imgPesquisa').value;
+
+            //     var novaPesquisa = {
+            //         nomePesquisa: nomePesquisa,
+            //         dataPesquisa: dataPesquisa,
+            //         imagemPesquisa: imagemPesquisa
+            //     };
+                
+            //     //converter um objeto js para uma string JSON
+            //     var pesquisas = JSON.parse(localStorage.getItem('pesquisas'))
+            //     //adicionar uma nova pesquisa na string JSON
+            //     pesquisas.push(novaPesquisa);
+            //     //armazenar no localStorage
+            //     localStorage.setItem('pesquisas', JSON.stringify(novaPesquisa))
+            //     window.location.href = 'Home.html';
+            // }
+
             function cadastrarPesquisa(){
                 var nomePesquisa = document.getElementById('txtNomePesquisa').value;
                 var dataPesquisa = document.getElementById('dtPesquisa').value;
-                var imagemPesquisa =document.getElementById('imgPesquisa').value;
+                var imagemPesquisa = document.getElementById('imgPesquisa').value;
 
                 var novaPesquisa = {
                     nomePesquisa: nomePesquisa,
                     dataPesquisa: dataPesquisa,
                     imagemPesquisa: imagemPesquisa
                 };
-                
-                //converter um objeto js para uma string JSON
-                var pesquisas = JSON.parse(localStorage.getItem('pesquisas'))
-                //adicionar uma nova pesquisa na string JSON
-                pesquisas.push(novaPesquisa);
-                //armazenar no localStorage
-                localStorage.setItem('pesquisas', JSON.stringify(novaPesquisa))
-                window.location.href = 'Home.html';
 
+                // Recupera a lista de pesquisas do localStorage
+                var pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
+
+                // Adiciona a nova pesquisa à lista
+                pesquisas.push(novaPesquisa);
+
+                // Armazena a lista atualizada no localStorage
+                localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
+
+                window.location.href = 'Home.html';
 
             }
         </script>
