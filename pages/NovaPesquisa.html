@@ -48,17 +48,29 @@
             </div>
         </main>
 
+        
         <script>
+            //ainda não está funcionando :(
             function cadastrarPesquisa(){
                 var nomePesquisa = document.getElementById('txtNomePesquisa').value;
                 var dataPesquisa = document.getElementById('dtPesquisa').value;
                 var imagemPesquisa =document.getElementById('imgPesquisa').value;
 
-                if(imagemPesquisa.files.length > 0){
-                    var imagem = imagemPesquisa.files[0];
-                    localStorage.setItem('imagemPesquisa')
-                    //vou terminar ainda ...
-                }
+                var novaPesquisa = {
+                    nomePesquisa: nomePesquisa,
+                    dataPesquisa: dataPesquisa,
+                    imagemPesquisa: imagemPesquisa
+                };
+                
+                //converter um objeto js para uma string JSON
+                var pesquisas = JSON.parse(localStorage.getItem('pesquisas'))
+                //adicionar uma nova pesquisa na string JSON
+                pesquisas.push(novaPesquisa);
+                //armazenar no localStorage
+                localStorage.setItem('pesquisas', JSON.stringify(novaPesquisa))
+                window.location.href = 'Home.html';
+
+
             }
         </script>
     </body>
