@@ -75,7 +75,8 @@
                 var nomePesquisa = document.getElementById('txtNomePesquisa').value;
                 var dataPesquisa = document.getElementById('dtPesquisa').value;
                 var imagemPesquisa = document.getElementById('imgPesquisa').value;
-
+                
+                //criação do objeto
                 var novaPesquisa = {
                     nomePesquisa: nomePesquisa,
                     dataPesquisa: dataPesquisa,
@@ -83,14 +84,14 @@
                 };
 
                 // Recupera a lista de pesquisas do localStorage
-                var pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
+                var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
 
                 // Adiciona a nova pesquisa à lista
-                pesquisas.push(novaPesquisa);
+                listaPesquisas.push(novaPesquisa);
                 
 
                 // Armazena a lista atualizada no localStorage
-                localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
+                localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
 
                 window.location.href = 'Home.html';
 

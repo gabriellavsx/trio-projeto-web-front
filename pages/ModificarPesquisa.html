@@ -46,9 +46,26 @@
 
             <script>
                 function alterarPesquisa(){
-                    var nomePesquisa = document.getElementById('txtNomePesquisa').value;
-                    var dataPesquisa = document.getElementById('dtPesquisa').value;
-                    var imagemPesquisa = document.getElementById('imgPesquisa').value;
+                    var novoNome = document.getElementById('txtNomePesquisa').value;
+                    var novaData = document.getElementById('dtPesquisa').value;
+                    var novaImagem = document.getElementById('imgPesquisa').value;
+
+                    //criação do objeto
+                    var editaPesquisa = {
+                        novoNome: novoNome,
+                        novaData: novaData,
+                        novaImagem: imagemPesquisa
+                    };
+
+                    // Recupera a lista de pesquisas do localStorage
+                    var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+
+                    //veerificar se tem alguma pesquisa já realizada
+                    if(pesquisas.length === 0){
+                        alert("Ainda não foi encontrado nenhuma pesquisa.");
+                        return;
+                    }
+                    
 
                     
                 }
