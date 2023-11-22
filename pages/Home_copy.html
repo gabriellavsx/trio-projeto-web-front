@@ -73,10 +73,14 @@
                 mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
                 containerPesquisa.appendChild(mensagemSemPesquisa);
             }
+            containerPesquisa.addEventListener('click',function(){
+                window.location.href = 'AcoesPesquisa.html';
+            });
         }
 
         // Chame a função para exibir as pesquisas ao carregar a página
         window.onload = mostrarPesquisas;
+
 
         function filtrarPesquisas() {
             var inputBusca = document.querySelector('.busca-input');

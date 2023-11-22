@@ -9,45 +9,47 @@
 
 
     <script>
-       function adicionarPesquisa() {
-    // Obtenha os valores dos campos do formulário
-    var nomePesquisa = document.getElementById('txtNomePesquisa').value;
-    var dataPesquisa = document.getElementById('dtPesquisa').value;
-    var imgPesquisaInput = document.getElementById('imgPesquisa');
+        function adicionarPesquisa() {
+        // Obtenha os valores dos campos do formulário
+        var nomePesquisa = document.getElementById('txtNomePesquisa').value;
+        var dataPesquisa = document.getElementById('dtPesquisa').value;
+        var imgPesquisaInput = document.getElementById('imgPesquisa');
 
-    // Verifique se um arquivo foi selecionado
-    if (imgPesquisaInput.files.length > 0) {
-        var file = imgPesquisaInput.files[0];
-        var reader = new FileReader();
+        // Verifique se um arquivo foi selecionado
+        if (imgPesquisaInput.files.length > 0) {
+            var file = imgPesquisaInput.files[0];
+            var reader = new FileReader();
 
-        reader.onloadend = function () {
-            var imagemPesquisa = reader.result;
+            reader.onloadend = function () {
+                var imagemPesquisa = reader.result;
 
-            // Crie um objeto representando a nova pesquisa
-            var novaPesquisa = {
-                nomePesquisa: nomePesquisa,
-                dataPesquisa: dataPesquisa,
-                imagemPesquisa: imagemPesquisa
+                // Crie um objeto representando a nova pesquisa
+                var novaPesquisa = {
+                    nomePesquisa: nomePesquisa,
+                    dataPesquisa: dataPesquisa,
+                    imagemPesquisa: imagemPesquisa
+                };
+
+                // Recupere a lista de pesquisas do localStorage
+                var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+
+                // Adicione a nova pesquisa à lista
+                listaPesquisas.push(novaPesquisa);
+
+                // Armazene a lista atualizada no localStorage
+                localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
+
+                // Redirecione para a página Home.html
+                window.location.href = 'Home_copy.html';
             };
 
-            // Recupere a lista de pesquisas do localStorage
-            var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+            reader.readAsDataURL(file);
+        } else {
+            alert('Por favor, selecione uma imagem.');
+        }
 
-            // Adicione a nova pesquisa à lista
-            listaPesquisas.push(novaPesquisa);
-
-            // Armazene a lista atualizada no localStorage
-            localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
-
-            // Redirecione para a página Home.html
-            window.location.href = 'Home_copy.html';
-        };
-
-        reader.readAsDataURL(file);
-    } else {
-        alert('Por favor, selecione uma imagem.');
+        
     }
-}
 
     </script>
 </head>
