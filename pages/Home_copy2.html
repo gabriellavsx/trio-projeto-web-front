@@ -67,26 +67,30 @@
 
         </div>
 
-        <div id="container-pesquisas">
+        <div id="pesquisa-container">
 
         </div>
 
         <script>
+        /*
             window.onload = function carregarPesquisaAntigas(){
                 // Recupera a lista de pesquisas do localStorage
                 var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
-
             };
+        */
+            function minhaPesquisa(nomePesquisa, dataPesquisa, imagemPesquisa){
+                var pesquisa = document.createElement("span");
+                pesquisa.innerHTML = imagemPesquisa + nomePesquisa + dataPesquisa;
+                return pesquisa;
+            }
+            function adicionarPesquisa(){
+                var nomePesquisa = document.getElementById('txtNomePesquisa').value;
+                var dataPesquisa = document.getElementById('dtPesquisa').value;
+                var imagemPesquisa = document.getElementById('imgPesquisa').value;
 
-            
- 
-            function mostrarPesquisa(){
-                //var containerPesquisa = document.getElementById('container-pesquisas')
-                const tituloPesquisa = document.createElement('span');
-                tituloPesquisa.className = "titulo-box"
-                tituloPesquisa.innerHTML = 
-
-
+                var listaPesquisas = document.getElementById("pesquisa-container")
+                listaPesquisas.appendChild(minhaPesquisa(nomePesquisa, dataPesquisa, imagemPesquisa))
+                
             }
         </script>
     </body>
