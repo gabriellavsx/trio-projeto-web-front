@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/Home.css">
-    <title>Satisfying.you</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/Home.css">
+        <title>Satisfying.you</title>
+    </head>
+    <body>
 
-    <nav class="navbar">
-        <div class="tituloPagina">
-            <img class="icon-smile" src="../icons/smile-icon.png" alt="">
-            <header>Satisfying.you</header>
+        <nav class="navbar">
+            <div class="tituloPagina">
+                <img class="icon-smile" src="../icons/smile-icon.png" alt>
+                <header>Satisfying.you</header>
+            </div>
+
+            <div class="containerBotao">
+                <a href="../pages/NovaPesquisa.html" target="_self"> <input
+                        class="botaoNovaPesquisa" type="submit"
+                        value="Nova Pesquisa"></a>
+            </div>
+
+            <div class="containerSair">
+                <a href="Index.html" class="sair">Sair</a>
+            </div>
+        </nav>
+
+        <div class="busca-container">
+            <input type="text" class="busca-input"
+                placeholder="Insira o termo de busca...">
         </div>
 
-        <div class="containerBotao">
-            <a href="../pages/NovaPesquisa_copy.html" target="_self"> <input
-                    class="botaoNovaPesquisa" type="submit"
-                    value="Nova Pesquisa"></a>
+        <div class="container-wrapper" id="containerPesquisa">
         </div>
-
-        <div class="containerSair">
-            <a href="Index.html" class="sair">Sair</a>
-        </div>
-    </nav>
-
-    <div class="setas-container">
-        <!-- <div class="seta seta-esquerda" onclick="rolar(-1)">&#10094;</div>
-        <div class="seta seta-direita" onclick="rolar(1)">&#10095;</div> -->
-    </div>
-
-    <div class="container-wrapper" id="containerPesquisa">
-        <!-- Os cards de pesquisa serão adicionados aqui dinamicamente -->
-    </div>
 
     <script>
-        // Função para exibir as pesquisas no localStorage em cards
         function mostrarPesquisas() {
             var containerPesquisa = document.getElementById('containerPesquisa');
             var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
@@ -79,6 +77,63 @@
 
         // Chame a função para exibir as pesquisas ao carregar a página
         window.onload = mostrarPesquisas;
+
+        function filtrarPesquisas() {
+            var inputBusca = document.querySelector('.busca-input');
+            var termoBusca = inputBusca.value.toLowerCase();
+
+            var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+            var pesquisasFiltradas = pesquisas.filter(function (pesquisa) {
+                return pesquisa.nomePesquisa.toLowerCase().includes(termoBusca);
+            });
+
+            exibirPesquisasFiltradas(pesquisasFiltradas);
+}
+
+function exibirPesquisasFiltradas(pesquisas) {
+    var containerPesquisa = document.getElementById('containerPesquisa');
+
+    // Limpar o conteúdo atual do containerPesquisa
+    containerPesquisa.innerHTML = '';
+
+    if (pesquisas.length > 0) {
+        pesquisas.forEach(function (pesquisa) {
+            var divPesquisa = document.createElement('div');
+            divPesquisa.className = 'container';
+
+            var imgPesquisa = document.createElement('img');
+            imgPesquisa.src = pesquisa.imagemPesquisa;
+            imgPesquisa.alt = 'ícone';
+            imgPesquisa.style.width = '100px';  // Ajuste a largura conforme necessário
+            imgPesquisa.style.height = '100px'; // Ajuste a altura conforme necessário
+
+            var pesquisaTitulo = document.createElement('h2');
+            pesquisaTitulo.className = 'tituloBox';
+            pesquisaTitulo.textContent = pesquisa.nomePesquisa;
+
+            var pesquisaData = document.createElement('span');
+            pesquisaData.className = 'subtituloBox';
+            pesquisaData.textContent = pesquisa.dataPesquisa;
+
+            divPesquisa.appendChild(imgPesquisa);
+            divPesquisa.appendChild(pesquisaTitulo);
+            divPesquisa.appendChild(pesquisaData);
+
+            containerPesquisa.appendChild(divPesquisa);
+        });
+    } else {
+        // Se não houver pesquisas correspondentes, exibir a mensagem padrão
+        var mensagemSemPesquisa = document.createElement('p');
+        mensagemSemPesquisa.className = "textoSemPesquisa"
+        mensagemSemPesquisa.textContent = 'Nenhuma pesquisa encontrada.';
+        containerPesquisa.appendChild(mensagemSemPesquisa);
+    }
+}
+
+// Adicione um ouvinte de eventos para o campo de busca
+document.querySelector('.busca-input').addEventListener('input', filtrarPesquisas);
+
+
     </script>
-</body>
+    </body>
 </html>
