@@ -48,28 +48,28 @@
     </a>
     <main>
         <div class="container">
-            <form onsubmit="adicionarPesquisa();return false;">
+            <form>
                 <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
 
                 <div class="form-group">
-                    <label for="txtNomePesquisa">Nome da pesquisa</label><br>
+                    <label for="txtNomePesquisa">Nome da pesquisa</label>
                     <input type="text" id="txtNomePesquisa" name="nomePesquisa" required><br>
                 </div>
 
                 <div class="form-group">
-                    <label for="dtPesquisa">Data</label><br>
-                    <input type="text" id="dtPesquisa" name="dataPesquisa" placeholder="DD/MM/AAAA" required><br>
+                    <label for="dtPesquisa">Data</label>
+                    <input type="text" id="dtPesquisa" name="dataPesquisa" placeholder="22/03/2023" required><br>
                 </div>
 
                 <div class="form-group">
-                    <label for="imgPesquisa">Imagem</label><br>
+                    <label for="imgPesquisa">Imagem</label>
                     <input type="file" id="imgPesquisa" name="imagemPesquisa" accept="image/*" required><br>
                 </div>
 
                 
 
                 <div class="containerCriar">
-                    <input type="submit" value="Criar">
+                    <input type="button" value="Criar" onclick="adicionarPesquisa()">
                 </div>
             </form>
         </div>
