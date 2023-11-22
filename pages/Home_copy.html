@@ -8,76 +8,76 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="tituloPagina">
-        <img class="icon-smile" src="../icons/smile-icon.png" alt>
-        <header>Satisfying.you</header>
+    <nav class="navbar">
+        <div class="tituloPagina">
+            <img class="icon-smile" src="../icons/smile-icon.png" alt="">
+            <header>Satisfying.you</header>
+        </div>
+
+        <div class="containerBotao">
+            <a href="../pages/NovaPesquisa_copy.html" target="_self"> <input
+                    class="botaoNovaPesquisa" type="submit"
+                    value="Nova Pesquisa"></a>
+        </div>
+
+        <div class="containerSair">
+            <a href="Index.html" class="sair">Sair</a>
+        </div>
+    </nav>
+
+    <div class="setas-container">
+        <div class="seta seta-esquerda" onclick="rolar(-1)">&#10094;</div>
+        <div class="seta seta-direita" onclick="rolar(1)">&#10095;</div>
     </div>
 
-    <div class="containerBotao">
-        <a href="../pages/NovaPesquisa_copy.html" target="_self"> <input
-                class="botaoNovaPesquisa" type="submit"
-                value="Nova Pesquisa"></a>
+    <div class="container-wrapper" id="containerPesquisa">
+        <!-- Os cards de pesquisa serão adicionados aqui dinamicamente -->
     </div>
 
-    <div class="containerSair">
-        <a href="Index.html" class="sair">Sair</a>
-    </div>
-</nav>
+    <script>
+        // Função para exibir as pesquisas no localStorage em cards
+        function mostrarPesquisas() {
+            var containerPesquisa = document.getElementById('containerPesquisa');
+            var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
 
-<div class="container-wrapper" id="containerPesquisa">
-</div>
+            // Limpar o conteúdo atual do containerPesquisa
+            containerPesquisa.innerHTML = '';
 
-<script>
-    function mostrarPesquisa() {
-        var containerPesquisa = document.getElementById('containerPesquisa');
-        const pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
+            if (pesquisas.length > 0) {
+                pesquisas.forEach(function (pesquisa) {
+                    var divPesquisa = document.createElement('div');
+                    divPesquisa.className = 'container';
 
-        // Limpar o conteúdo atual do containerPesquisa
-        containerPesquisa.innerHTML = '';
+                    var imgPesquisa = document.createElement('img');
+                    imgPesquisa.src = pesquisa.imagemPesquisa;
+                    imgPesquisa.alt = 'ícone';
+                    imgPesquisa.style.width = '100px';  // Ajuste a largura conforme necessário
+                    imgPesquisa.style.height = '100px'; // Ajuste a altura conforme necessário
 
-        if (pesquisas.length > 0) {
-            pesquisas.forEach(function (pesquisa) {
-                var divPesquisa = document.createElement('div');
-                divPesquisa.className = 'container';
-                divPesquisa.style.display = "flex";
-                divPesquisa.style.flexWrap = "wrap"
+                    var pesquisaTitulo = document.createElement('h2');
+                    pesquisaTitulo.className = 'tituloBox';
+                    pesquisaTitulo.textContent = pesquisa.nomePesquisa;
 
-                var imgPesquisa = document.createElement('img');
-                imgPesquisa.src = pesquisa.imagemPesquisa; 
-                imgPesquisa.alt = 'ícone';
-                imgPesquisa.style.width = "100px"
-                imgPesquisa.style.height = "100px"
-                
+                    var pesquisaData = document.createElement('span');
+                    pesquisaData.className = 'subtituloBox';
+                    pesquisaData.textContent = pesquisa.dataPesquisa;
 
-                var pesquisaTitulo = document.createElement('h2');
-                pesquisaTitulo.className = 'tituloBox';
-                pesquisaTitulo.textContent = pesquisa.nomePesquisa; 
+                    divPesquisa.appendChild(imgPesquisa);
+                    divPesquisa.appendChild(pesquisaTitulo);
+                    divPesquisa.appendChild(pesquisaData);
 
-                var pesquisaData = document.createElement('span');
-                pesquisaData.className = 'subtituloBox';
-                pesquisaData.textContent = pesquisa.dataPesquisa;
-
-                divPesquisa.appendChild(imgPesquisa);
-                divPesquisa.appendChild(pesquisaTitulo);
-                divPesquisa.appendChild(pesquisaData);
-
-                var pesquisaLink = document.createElement('a');
-                pesquisaLink.href = 'AcoesPesquisa.html';
-                pesquisaLink.appendChild(divPesquisa);
-
-                containerPesquisa.appendChild(pesquisaLink);
-            });
-        } else {
-            // Se não houver pesquisas, exibir a mensagem padrão
-            var mensagemSemPesquisa = document.createElement('p');
-            mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
-            containerPesquisa.appendChild(mensagemSemPesquisa);
+                    containerPesquisa.appendChild(divPesquisa);
+                });
+            } else {
+                // Se não houver pesquisas, exibir a mensagem padrão
+                var mensagemSemPesquisa = document.createElement('p');
+                mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
+                containerPesquisa.appendChild(mensagemSemPesquisa);
+            }
         }
-    }
 
-    window.onload = mostrarPesquisa;
-</script>
-
+        // Chame a função para exibir as pesquisas ao carregar a página
+        window.onload = mostrarPesquisas;
+    </script>
 </body>
 </html>

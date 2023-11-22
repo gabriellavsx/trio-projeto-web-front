@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/NovaPesquisa.css">
     <title>Satisfying.you</title>
+
+
+    <script>
+        function adicionarPesquisa() {
+            // Obtenha os valores dos campos do formulário
+            var nomePesquisa = document.getElementById('txtNomePesquisa').value;
+            var dataPesquisa = document.getElementById('dtPesquisa').value;
+            var imgPesquisaInput = document.getElementById('imgPesquisa');
+            var imagemPesquisa = imgPesquisaInput.files.length > 0 ? imgPesquisaInput.files[0].name : '';
+
+            // Crie um objeto representando a nova pesquisa
+            var novaPesquisa = {
+                nomePesquisa: nomePesquisa,
+                dataPesquisa: dataPesquisa,
+                imagemPesquisa: imagemPesquisa
+            };
+
+            // Recupere a lista de pesquisas do localStorage
+            var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+
+            // Adicione a nova pesquisa à lista
+            listaPesquisas.push(novaPesquisa);
+
+            // Armazene a lista atualizada no localStorage
+            localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
+
+            // Redirecione para a página Home.html
+            window.location.href = 'Home_copy.html';
+        }
+    </script>
 </head>
 
 <body>
@@ -18,17 +48,17 @@
     </a>
     <main>
         <div class="container">
-            <form onsubmit="cadastrarPesquisa(); return false">
+            <form onsubmit="adicionarPesquisa();return false;">
                 <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
 
                 <div class="form-group">
                     <label for="txtNomePesquisa">Nome da pesquisa</label><br>
-                    <input type="text" id="txtNomePesquisa" name="nomePesquisa" placeholder="Carnaval 2023" required><br>
+                    <input type="text" id="txtNomePesquisa" name="nomePesquisa" required><br>
                 </div>
 
                 <div class="form-group">
                     <label for="dtPesquisa">Data</label><br>
-                    <input type="text" id="dtPesquisa" name="dataPesquisa" placeholder="22/03/2023" required><br>
+                    <input type="text" id="dtPesquisa" name="dataPesquisa" placeholder="DD/MM/AAAA" required><br>
                 </div>
 
                 <div class="form-group">
@@ -36,9 +66,7 @@
                     <input type="file" id="imgPesquisa" name="imagemPesquisa" accept="image/*" required><br>
                 </div>
 
-                <div class="containerImg">
-                    <img id="previewImg" src="../assets/mascara.png" alt="">
-                </div>
+                
 
                 <div class="containerCriar">
                     <input type="submit" value="Criar">
@@ -47,46 +75,7 @@
         </div>
     </main>
 
-    <script>
-        function adicionarPesquisa() {
-            var nomePesquisa = document.getElementById('txtNomePesquisa').value;
-            var dataPesquisa = document.getElementById('dtPesquisa').value;
-
-            // Handle the image file
-            var fileInput = document.getElementById('imgPesquisa');
-            var imagemPesquisa = '';
-
-            if (fileInput.files.length > 0) {
-                var file = fileInput.files[0];
-                var reader = new FileReader();
-
-                reader.onloadend = function () {
-                    imagemPesquisa = reader.result;
-
-                    // Create the pesquisa object
-                    var novaPesquisa = {
-                        nomePesquisa: nomePesquisa,
-                        dataPesquisa: dataPesquisa,
-                        imagemPesquisa: imagemPesquisa
-                    };
-
-                    // Retrieve and update the list of pesquisas from localStorage
-                    var pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
-                    pesquisas.push(novaPesquisa);
-                    localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
-
-                    // Redirect to Home_copy.html
-                   // window.location.href = 'Home_copy.html';
-                };
-
-                reader.readAsDataURL(file);
-            } else {
-                alert('Por favor, selecione uma imagem.');
-            }
-}
-
-
-    </script>
+   
 </body>
 
 </html>
