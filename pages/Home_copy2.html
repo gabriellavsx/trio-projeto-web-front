@@ -66,18 +66,11 @@
             </a> -->
 
         </div>
-
-        <div id="pesquisa-container">
-
+        <div class="container-wrapper" id="containerPesquisa">
         </div>
 
         <script>
-        /*
-            window.onload = function carregarPesquisaAntigas(){
-                // Recupera a lista de pesquisas do localStorage
-                var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
-            };
-        */
+            /*
             function minhaPesquisa(nomePesquisa, dataPesquisa, imagemPesquisa){
                 var pesquisa = document.createElement("span");
                 pesquisa.innerHTML = imagemPesquisa + nomePesquisa + dataPesquisa;
@@ -89,9 +82,46 @@
                 var imagemPesquisa = document.getElementById('imgPesquisa').value;
 
                 var listaPesquisas = document.getElementById("pesquisa-container")
-                listaPesquisas.appendChild(minhaPesquisa(nomePesquisa, dataPesquisa, imagemPesquisa))
+                listaPesquisas.appendChild(minhaPesquisa(nomePesquisa, dataPesquisa, imagemPesquisa))   
+            }*/
+            function mostrarPesquisa(pesquisa) {
+                // Recupera a lista de pesquisas do localStorage
+                var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+                var containerPesquisa = document.getElementById('containerPesquisa');
+
+                var divPesquisa = document.createElement('div');
+                divPesquisa.className = 'container';
+                divPesquisa.style.display = "flex";
+                divPesquisa.style.flexWrap = "wrap"
+
+                var imgPesquisa = document.createElement('img');
+                imgPesquisa.src = pesquisa.imagemPesquisa; 
+                imgPesquisa.alt = 'icone';
+                imgPesquisa.style.width = "100px"
+                imgPesquisa.style.height = "100px"
+                            
+                var pesquisaTitulo = document.createElement('h2');
+                pesquisaTitulo.className = 'tituloBox';
+                pesquisaTitulo.textContent = pesquisa.nomePesquisa; 
+
+                var pesquisaData = document.createElement('span');
+                pesquisaData.className = 'subtituloBox';
+                pesquisaData.textContent = pesquisa.dataPesquisa;
+
+                divPesquisa.appendChild(imgPesquisa);
+                divPesquisa.appendChild(pesquisaTitulo);
+                divPesquisa.appendChild(pesquisaData);
+
+                var pesquisaLink = document.createElement('a');
+                pesquisaLink.href = 'AcoesPesquisa.html';
+                pesquisaLink.appendChild(divPesquisa);
+
+                containerPesquisa.appendChild(pesquisaLink);
                 
-            }
+            };
+            
+            window.onload = mostrarPesquisa;
+
         </script>
     </body>
 </html>
