@@ -22,12 +22,14 @@
 
             reader.onloadend = function () {
                 var imagemPesquisa = reader.result;
+                var idUsuario = obterIdUsuarioLogado()
 
                 // Crie um objeto representando a nova pesquisa
                 var novaPesquisa = {
                     nomePesquisa: nomePesquisa,
                     dataPesquisa: dataPesquisa,
-                    imagemPesquisa: imagemPesquisa
+                    imagemPesquisa: imagemPesquisa,
+                    idUsuario: idUsuario
                 };
 
                 // Recupere a lista de pesquisas do localStorage
@@ -46,9 +48,11 @@
             reader.readAsDataURL(file);
         } else {
             alert('Por favor, selecione uma imagem.');
-        }
+        } 
+    }
 
-        
+    function obterIdUsuarioLogado(){
+        return localStorage.getItem('idUsuario') || null
     }
 
     </script>

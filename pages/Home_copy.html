@@ -33,111 +33,131 @@
         <div class="container-wrapper" id="containerPesquisa">
         </div>
 
-    <script>
-        function mostrarPesquisas() {
-            var containerPesquisa = document.getElementById('containerPesquisa');
-            var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
-
-            // Limpar o conteúdo atual do containerPesquisa
-            containerPesquisa.innerHTML = '';
-
-            if (pesquisas.length > 0) {
-                pesquisas.forEach(function (pesquisa) {
-                    var divPesquisa = document.createElement('div');
-                    divPesquisa.className = 'container';
-
-                    var imgPesquisa = document.createElement('img');
-                    imgPesquisa.src = pesquisa.imagemPesquisa;
-                    imgPesquisa.alt = 'ícone';
-                    imgPesquisa.style.width = '175px';  // Ajuste a largura conforme necessário
-                    imgPesquisa.style.height = '150px'; // Ajuste a altura conforme necessário
-
-                    var pesquisaTitulo = document.createElement('h2');
-                    pesquisaTitulo.className = 'tituloBox';
-                    pesquisaTitulo.textContent = pesquisa.nomePesquisa;
-
-                    var pesquisaData = document.createElement('span');
-                    pesquisaData.className = 'subtituloBox';
-                    pesquisaData.textContent = pesquisa.dataPesquisa;
-
-                    divPesquisa.appendChild(imgPesquisa);
-                    divPesquisa.appendChild(pesquisaTitulo);
-                    divPesquisa.appendChild(pesquisaData);
-
-                    containerPesquisa.appendChild(divPesquisa);
-                });
-            } else {
-                // Se não houver pesquisas, exibir a mensagem padrão
-                var mensagemSemPesquisa = document.createElement('p');
-                mensagemSemPesquisa.className = "textoSemPesquisa"
-                mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
-                containerPesquisa.appendChild(mensagemSemPesquisa);
+        
+        <script>
+            function obterIdUsuarioLogado() {
+                return localStorage.getItem('idUsuario');
             }
-            containerPesquisa.addEventListener('click',function(){
-                window.location.href = 'AcoesPesquisa.html';
-            });
-        }
-
-        // Chame a função para exibir as pesquisas ao carregar a página
-        window.onload = mostrarPesquisas;
-
-
-        function filtrarPesquisas() {
-            var inputBusca = document.querySelector('.busca-input');
-            var termoBusca = inputBusca.value.toLowerCase();
-
-            var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
-            var pesquisasFiltradas = pesquisas.filter(function (pesquisa) {
-                return pesquisa.nomePesquisa.toLowerCase().includes(termoBusca);
-            });
-
-            exibirPesquisasFiltradas(pesquisasFiltradas);
-}
-
-function exibirPesquisasFiltradas(pesquisas) {
-    var containerPesquisa = document.getElementById('containerPesquisa');
-
-    // Limpar o conteúdo atual do containerPesquisa
-    containerPesquisa.innerHTML = '';
-
-    if (pesquisas.length > 0) {
-        pesquisas.forEach(function (pesquisa) {
-            var divPesquisa = document.createElement('div');
-            divPesquisa.className = 'container';
-
-            var imgPesquisa = document.createElement('img');
-            imgPesquisa.src = pesquisa.imagemPesquisa;
-            imgPesquisa.alt = 'ícone';
-            imgPesquisa.style.width = '175px';  // Ajuste a largura conforme necessário
-            imgPesquisa.style.height = '150px'; // Ajuste a altura conforme necessário
-
-            var pesquisaTitulo = document.createElement('h2');
-            pesquisaTitulo.className = 'tituloBox';
-            pesquisaTitulo.textContent = pesquisa.nomePesquisa;
-
-            var pesquisaData = document.createElement('span');
-            pesquisaData.className = 'subtituloBox';
-            pesquisaData.textContent = pesquisa.dataPesquisa;
-
-            divPesquisa.appendChild(imgPesquisa);
-            divPesquisa.appendChild(pesquisaTitulo);
-            divPesquisa.appendChild(pesquisaData);
-
-            containerPesquisa.appendChild(divPesquisa);
-        });
-    } else {
-        // Se não houver pesquisas correspondentes, exibir a mensagem padrão
-        var mensagemSemPesquisa = document.createElement('p');
-        mensagemSemPesquisa.className = "textoSemPesquisa"
-        mensagemSemPesquisa.textContent = 'Nenhuma pesquisa encontrada.';
-        containerPesquisa.appendChild(mensagemSemPesquisa);
-    }
-}
-
-// Adicione um ouvinte de eventos para o campo de busca
-document.querySelector('.busca-input').addEventListener('input', filtrarPesquisas);
-
-
-    </script>
+        
+            function mostrarPesquisas() {
+                var containerPesquisa = document.getElementById('containerPesquisa');
+                var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+                var idUsuarioLogado = obterIdUsuarioLogado();
+        
+                // Limpar o conteúdo atual do containerPesquisa
+                containerPesquisa.innerHTML = '';
+        
+                if (pesquisas.length > 0) {
+                    pesquisas.forEach(function (pesquisa) {
+                        if (pesquisa.idUsuario === idUsuarioLogado) {
+                            var divPesquisa = document.createElement('div');
+                            divPesquisa.className = 'container';
+        
+                            var imgPesquisa = document.createElement('img');
+                            imgPesquisa.src = pesquisa.imagemPesquisa;
+                            imgPesquisa.alt = 'ícone';
+                            imgPesquisa.style.width = '175px';  // Ajuste a largura conforme necessário
+                            imgPesquisa.style.height = '150px'; // Ajuste a altura conforme necessário
+        
+                            var pesquisaTitulo = document.createElement('h2');
+                            pesquisaTitulo.className = 'tituloBox';
+                            pesquisaTitulo.textContent = pesquisa.nomePesquisa;
+        
+                            var pesquisaData = document.createElement('span');
+                            pesquisaData.className = 'subtituloBox';
+                            pesquisaData.textContent = pesquisa.dataPesquisa;
+        
+                            divPesquisa.appendChild(imgPesquisa);
+                            divPesquisa.appendChild(pesquisaTitulo);
+                            divPesquisa.appendChild(pesquisaData);
+        
+                            containerPesquisa.appendChild(divPesquisa);
+        
+                            // Adicione um ouvinte de eventos para cada div de pesquisa
+                            divPesquisa.addEventListener('click', function () {
+                                window.location.href = 'AcoesPesquisa.html';
+                            });
+                        }
+                    });
+                } else {
+                    // Se não houver pesquisas, exibir a mensagem padrão
+                    var mensagemSemPesquisa = document.createElement('p');
+                    mensagemSemPesquisa.className = "textoSemPesquisa"
+                    mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
+                    
+                    // Adicione um ouvinte de eventos para a mensagem
+                    mensagemSemPesquisa.addEventListener('click', function () {
+                        // Pode adicionar um redirecionamento ou outra ação aqui, se necessário
+                        // window.location.href = 'AlgumaPagina.html';
+                    });
+        
+                    containerPesquisa.appendChild(mensagemSemPesquisa);
+                }
+            }
+        
+            // Chame a função para exibir as pesquisas ao carregar a página
+            window.onload = mostrarPesquisas;
+        
+            function filtrarPesquisas() {
+                var inputBusca = document.querySelector('.busca-input');
+                var termoBusca = inputBusca.value.toLowerCase();
+        
+                var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+                var pesquisasFiltradas = pesquisas.filter(function (pesquisa) {
+                    return pesquisa.nomePesquisa.toLowerCase().includes(termoBusca);
+                });
+        
+                exibirPesquisasFiltradas(pesquisasFiltradas);
+            }
+        
+            function exibirPesquisasFiltradas(pesquisas) {
+                var containerPesquisa = document.getElementById('containerPesquisa');
+        
+                // Limpar o conteúdo atual do containerPesquisa
+                containerPesquisa.innerHTML = '';
+        
+                if (pesquisas.length > 0) {
+                    pesquisas.forEach(function (pesquisa) {
+                        var divPesquisa = document.createElement('div');
+                        divPesquisa.className = 'container';
+        
+                        var imgPesquisa = document.createElement('img');
+                        imgPesquisa.src = pesquisa.imagemPesquisa;
+                        imgPesquisa.alt = 'ícone';
+                        imgPesquisa.style.width = '175px';  // Ajuste a largura conforme necessário
+                        imgPesquisa.style.height = '150px'; // Ajuste a altura conforme necessário
+        
+                        var pesquisaTitulo = document.createElement('h2');
+                        pesquisaTitulo.className = 'tituloBox';
+                        pesquisaTitulo.textContent = pesquisa.nomePesquisa;
+        
+                        var pesquisaData = document.createElement('span');
+                        pesquisaData.className = 'subtituloBox';
+                        pesquisaData.textContent = pesquisa.dataPesquisa;
+        
+                        divPesquisa.appendChild(imgPesquisa);
+                        divPesquisa.appendChild(pesquisaTitulo);
+                        divPesquisa.appendChild(pesquisaData);
+        
+                        containerPesquisa.appendChild(divPesquisa);
+        
+                        // Adicione um ouvinte de eventos para cada div de pesquisa
+                        divPesquisa.addEventListener('click', function () {
+                            window.location.href = 'AcoesPesquisa.html';
+                        });
+                    });
+                } else {
+                    // Se não houver pesquisas correspondentes, exibir a mensagem padrão
+                    var mensagemSemPesquisa = document.createElement('p');
+                    mensagemSemPesquisa.className = "textoSemPesquisa"
+                    mensagemSemPesquisa.textContent = 'Nenhuma pesquisa encontrada.';
+                    containerPesquisa.appendChild(mensagemSemPesquisa);
+                }
+            }
+        
+            // Adicione um ouvinte de eventos para o campo de busca
+            document.querySelector('.busca-input').addEventListener('input', filtrarPesquisas);
+        </script>
+        
     </body>
 </html>
