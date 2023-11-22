@@ -69,7 +69,7 @@ input[type="text"], [type="date"], [type="file"]{
     font-size: 18px;
 }
 
-input[type="submit"]{
+input[type="button"]{
     background-color: #37BD6D;
     font-size: 14px;
     color: #fff;

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/Home.css">
+        <title>Satisfying.you</title>
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <div class="tituloPagina">
+                <img class="icon-smile" src="../icons/smile-icon.png" alt>
+                <header>Satisfying.you</header>
+            </div>
+
+            <div class="containerBotao">
+                <a href="../pages/NovaPesquisa.html" target="_self"> <input
+                        class="botaoNovaPesquisa" type="submit"
+                        value="Nova Pesquisa"></a>
+            </div>
+
+            <div class="containerSair">
+                <a href="Index.html" class="sair">Sair</a>
+            </div>
+        </nav>
+
+        <div class="container-wrapper">
+
+            <div class="busca-container">
+                <input type="text" class="busca-input"
+                    placeholder="Insira o termo de busca...">
+            </div>
+            <!--<a href="AcoesPesquisa.html">
+                <div class="container">
+                    <img src="../icons/secomp-icon.png" alt="ícone" class="icon">
+                    <h2 class="tituloBox">SECOMP 2023</h2>
+                    <span class="subtituloBox">10/10/2023</span>
+                </div>
+            </a>
+
+            <a href="AcoesPesquisa.html">
+                <div class="container">
+                    <img src="../icons/ubuntu-icon.png" alt="ícone" class="icon">
+                    <h2 class="tituloBox">UBUNTU 2022</h2>
+                    <span class="subtituloBox">05/02/2022</span>
+                </div>
+            </a>
+
+            <a href="AcoesPesquisa.html">
+                <div class="container">
+                    <img src="../icons/meninascpu-icon.png" alt="ícone"
+                        class="icon-2">
+                    <h2 class="tituloBox">MENINAS CPU</h2>
+                    <span class="subtituloBox">01/04/2022</span>
+                </div>
+            </a>
+
+            <a href="AcoesPesquisa.html">
+                <div class="container">
+                    <img src="../icons/melodia-icon.png" alt="ícone"
+                        class="icon-2">
+                    <h2 class="tituloBox">FESTIVAL MELODIA 2023</h2>
+                    <span class="subtituloBox">14/09/2023</span>
+                </div>
+            </a> -->
+
+        </div>
+
+        <div id="container-pesquisas">
+
+        </div>
+
+        <script>
+            window.onload = function carregarPesquisaAntigas(){
+                // Recupera a lista de pesquisas do localStorage
+                var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+
+            };
+
+            
+ 
+            function mostrarPesquisa(){
+                //var containerPesquisa = document.getElementById('container-pesquisas')
+                const tituloPesquisa = document.createElement('span');
+                tituloPesquisa.className = "titulo-box"
+                tituloPesquisa.innerHTML = 
+
+
+            }
+        </script>
+    </body>
+</html>
