@@ -60,11 +60,7 @@
                     // Recupera a lista de pesquisas do localStorage
                     var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
 
-                    //veerificar se tem alguma pesquisa já realizada
-                    if(listaPesquisas.length === 0){
-                        alert("Ainda não foi encontrado nenhuma pesquisa.");
-                        return;
-                    }
+                    //substituir os dados antigos pelo os novos, talvez pelo o indice?
                     
 
                     

@@ -19,7 +19,7 @@
     </a>
         <main>
             <div class="container">
-                <form action="Home.html" method="get" onsubmit="cadastrarPesquisa(); return false">
+                <form>
                     <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
                     
                     <div class="form-group">
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="containerCriar">
-                        <input type="submit" value="Criar" onclick="cadastrarPesquisa">
+                        <input type="button" value="Criar" onclick="cadastrarPesquisa()">
                     </div>
                 </form>
             </div>
@@ -72,6 +72,7 @@
             // }
 
             function cadastrarPesquisa(){
+
                 var nomePesquisa = document.getElementById('txtNomePesquisa').value;
                 var dataPesquisa = document.getElementById('dtPesquisa').value;
                 var imagemPesquisa = document.getElementById('imgPesquisa').value;
