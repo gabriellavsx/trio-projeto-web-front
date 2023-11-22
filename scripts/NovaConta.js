@@ -1,0 +1,20 @@
+function cadastrarUsuario() {
+    var email = document.getElementById('txtEmail').value;
+    var senha = document.getElementById('txtSenha').value;
+    var senhaRepetir = document.getElementById('txtSenhaRepetir').value;
+
+    if (senha === senhaRepetir) {
+        var novoUsuario = {
+            email: email,
+            senha: senha
+        };
+
+        var usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        usuarios.push(novoUsuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        window.location.href = 'Index.html';
+    } else {
+        document.getElementById('erroSenhas').innerHTML = 'Senhas não conferem';
+    }
+}
