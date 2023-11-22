@@ -9,12 +9,19 @@
 
 
     <script>
-        function adicionarPesquisa() {
-            // Obtenha os valores dos campos do formulário
-            var nomePesquisa = document.getElementById('txtNomePesquisa').value;
-            var dataPesquisa = document.getElementById('dtPesquisa').value;
-            var imgPesquisaInput = document.getElementById('imgPesquisa');
-            var imagemPesquisa = imgPesquisaInput.files.length > 0 ? imgPesquisaInput.files[0].name : '';
+       function adicionarPesquisa() {
+    // Obtenha os valores dos campos do formulário
+    var nomePesquisa = document.getElementById('txtNomePesquisa').value;
+    var dataPesquisa = document.getElementById('dtPesquisa').value;
+    var imgPesquisaInput = document.getElementById('imgPesquisa');
+
+    // Verifique se um arquivo foi selecionado
+    if (imgPesquisaInput.files.length > 0) {
+        var file = imgPesquisaInput.files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            var imagemPesquisa = reader.result;
 
             // Crie um objeto representando a nova pesquisa
             var novaPesquisa = {
@@ -34,7 +41,14 @@
 
             // Redirecione para a página Home.html
             window.location.href = 'Home_copy.html';
-        }
+        };
+
+        reader.readAsDataURL(file);
+    } else {
+        alert('Por favor, selecione uma imagem.');
+    }
+}
+
     </script>
 </head>
 
