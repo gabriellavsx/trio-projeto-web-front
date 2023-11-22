@@ -26,8 +26,8 @@
     </nav>
 
     <div class="setas-container">
-        <div class="seta seta-esquerda" onclick="rolar(-1)">&#10094;</div>
-        <div class="seta seta-direita" onclick="rolar(1)">&#10095;</div>
+        <!-- <div class="seta seta-esquerda" onclick="rolar(-1)">&#10094;</div>
+        <div class="seta seta-direita" onclick="rolar(1)">&#10095;</div> -->
     </div>
 
     <div class="container-wrapper" id="containerPesquisa">
@@ -71,6 +71,7 @@
             } else {
                 // Se não houver pesquisas, exibir a mensagem padrão
                 var mensagemSemPesquisa = document.createElement('p');
+                mensagemSemPesquisa.className = "textoSemPesquisa"
                 mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
                 containerPesquisa.appendChild(mensagemSemPesquisa);
             }
