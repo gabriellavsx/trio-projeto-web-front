@@ -31,12 +31,7 @@
                 <input type="text" class="busca-input"
                     placeholder="Insira o termo de busca...">
             </div>
-<<<<<<< HEAD
-            <a href="AcoesPesquisa.html?idPesquisa=">
-=======
-            
-            <!-- <a href="AcoesPesquisa.html">
->>>>>>> 35f9ef6bf0517654b67edcbee0817ae1877690c0
+            <!--<a href="AcoesPesquisa.html">
                 <div class="container">
                     <img src="../icons/secomp-icon.png" alt="ícone" class="icon">
                     <h2 class="tituloBox">SECOMP 2023</h2>
@@ -74,43 +69,6 @@
 
         <div id="container-pesquisas"></div>
 
-        <script>
-            function mostrarPesquisa(){
-                var containerPesquisa = document.getElementById('container-pesquisa')
-                var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas'))
 
-                pesquisas.forEach(function(pesquisa){
-                    var pesquisaDiv = document.createElement('div')
-                    pesquisaDiv.className = 'container'
-
-                    var imagemPesquisa = document.createElement('img')
-                    imagemPesquisa.src = pesquisa.imagemPesquisa
-                    imagemPesquisa.alt = 'ícone'
-                    imagemPesquisa.className = 'icon'
-                    imagemPesquisa.style.widht = '100px'
-                    imagemPesquisa.style.height = '100px'
-
-                    var tituloPesquisa = document.createElement('h2')
-                    tituloPesquisa.className = 'tituloBox'
-                    tituloPesquisa.textContent = pesquisa.nomePesquisa
-
-                    var dataPesquisa = document.createElement('span');
-                    dataPesquisa.className = 'subtituloBox';
-                    dataPesquisa.textContent = research.dataPesquisa;
-
-                    pesquisaDiv.appendChild(imagemPesquisa)
-                    pesquisaDiv.appendChild(tituloPesquisa)
-                    pesquisaDiv.appendChild(dataPesquisa)
-
-                    var pesquisaLink = document.createElement('a')
-                    pesquisaLink.href = 'AcoesPesquisa.html'
-                    pesquisaLink.appendChild(pesquisaDiv)
-
-                    containerPesquisa.appendChild(pesquisaLink)    
-                })
-            }
-
-            window.onload = mostrarPesquisa
-        </script>
     </body>
 </html>
