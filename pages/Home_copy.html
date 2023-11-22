@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/Home.css">
+    <title>Satisfying.you</title>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="tituloPagina">
+        <img class="icon-smile" src="../icons/smile-icon.png" alt>
+        <header>Satisfying.you</header>
+    </div>
+
+    <div class="containerBotao">
+        <a href="../pages/NovaPesquisa_copy.html" target="_self"> <input
+                class="botaoNovaPesquisa" type="submit"
+                value="Nova Pesquisa"></a>
+    </div>
+
+    <div class="containerSair">
+        <a href="Index.html" class="sair">Sair</a>
+    </div>
+</nav>
+
+<div class="container-wrapper" id="containerPesquisa">
+</div>
+
+<script>
+    function mostrarPesquisa() {
+        var containerPesquisa = document.getElementById('containerPesquisa');
+        const pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
+
+        // Limpar o conteúdo atual do containerPesquisa
+        containerPesquisa.innerHTML = '';
+
+        if (pesquisas.length > 0) {
+            pesquisas.forEach(function (pesquisa) {
+                var divPesquisa = document.createElement('div');
+                divPesquisa.className = 'container';
+                divPesquisa.style.display = "flex";
+                divPesquisa.style.flexWrap = "wrap"
+
+                var imgPesquisa = document.createElement('img');
+                imgPesquisa.src = pesquisa.imagemPesquisa; 
+                imgPesquisa.alt = 'ícone';
+                imgPesquisa.style.width = "100px"
+                imgPesquisa.style.height = "100px"
+                
+
+                var pesquisaTitulo = document.createElement('h2');
+                pesquisaTitulo.className = 'tituloBox';
+                pesquisaTitulo.textContent = pesquisa.nomePesquisa; 
+
+                var pesquisaData = document.createElement('span');
+                pesquisaData.className = 'subtituloBox';
+                pesquisaData.textContent = pesquisa.dataPesquisa;
+
+                divPesquisa.appendChild(imgPesquisa);
+                divPesquisa.appendChild(pesquisaTitulo);
+                divPesquisa.appendChild(pesquisaData);
+
+                var pesquisaLink = document.createElement('a');
+                pesquisaLink.href = 'AcoesPesquisa.html';
+                pesquisaLink.appendChild(divPesquisa);
+
+                containerPesquisa.appendChild(pesquisaLink);
+            });
+        } else {
+            // Se não houver pesquisas, exibir a mensagem padrão
+            var mensagemSemPesquisa = document.createElement('p');
+            mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
+            containerPesquisa.appendChild(mensagemSemPesquisa);
+        }
+    }
+
+    window.onload = mostrarPesquisa;
+</script>
+
+</body>
+</html>
