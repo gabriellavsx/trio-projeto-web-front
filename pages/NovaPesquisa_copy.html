@@ -9,11 +9,18 @@
 
 
     <script>
+
+    function gerarIdPesquisa(){
+        return Math.floor(Math.random() * Date.now())
+    }
+
+
         function adicionarPesquisa() {
         // Obtenha os valores dos campos do formulário
         var nomePesquisa = document.getElementById('txtNomePesquisa').value;
         var dataPesquisa = document.getElementById('dtPesquisa').value;
         var imgPesquisaInput = document.getElementById('imgPesquisa');
+        var idPesquisa = gerarIdPesquisa()
 
         // Verifique se um arquivo foi selecionado
         if (imgPesquisaInput.files.length > 0) {
@@ -29,7 +36,8 @@
                     nomePesquisa: nomePesquisa,
                     dataPesquisa: dataPesquisa,
                     imagemPesquisa: imagemPesquisa,
-                    idUsuario: idUsuario
+                    idUsuario: idUsuario,
+                    idPesquisa: idPesquisa
                 };
 
                 // Recupere a lista de pesquisas do localStorage

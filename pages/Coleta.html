@@ -21,33 +21,41 @@
             </div>
 
             <div class="avaliacao">
-                <a class="nota" href="AgradecimentoParticipacao.html">
-                    <img src="../assets/notas/pessimo.svg" alt="Nota péssima"
-                        class="imagem">
+                <a class="nota" href="#" onclick="avaliarPesquisa('pessimo')">
+                    <img src="../assets/notas/pessimo.svg" alt="Nota péssima" class="imagem">
                     <p>Péssimo</p>
                 </a>
-                <a class="nota" href="AgradecimentoParticipacao.html">
-                    <img src="../assets/notas/ruim.svg" alt="Nota Ruim"
-                        class="imagem">
+                <a class="nota" href="#" onclick="avaliarPesquisa('ruim')">
+                    <img src="../assets/notas/ruim.svg" alt="Nota Ruim" class="imagem">
                     <p>Ruim</p>
                 </a>
-                <a class="nota" href="AgradecimentoParticipacao.html">
-                    <img src="../assets/notas/neutro.svg" alt="Nota Neutra"
-                        class="imagem">
+                <a class="nota" href="#" onclick="avaliarPesquisa('neutra')">
+                    <img src="../assets/notas/neutro.svg" alt="Nota Neutra" class="imagem">
                     <p>Neutro</p>
                 </a>
-                <a class="nota" href="AgradecimentoParticipacao.html">
-                    <img src="../assets/notas/bom.svg" alt="Nota boa"
-                        class="imagem">
+                <a class="nota" href="#" onclick="avaliarPesquisa('boa')">
+                    <img src="../assets/notas/bom.svg" alt="Nota boa" class="imagem">
                     <p>Boa</p>
                 </a>
-                <a class="nota" href="AgradecimentoParticipacao.html">
-                    <img src="../assets/notas/excelente.svg"
-                        alt="Nota excelente" class="imagem">
+                <a class="nota" href="#" onclick="avaliarPesquisa('excelente')">
+                    <img src="../assets/notas/excelente.svg" alt="Nota excelente" class="imagem">
                     <p>Excelente</p>
                 </a>
+    
+                <!-- adicionar id da pesquisa -->
+                <input type="hidden" id="idPesquisa" value="idPesquisa">
             </div>
         </main>
+
+        <script>
+            function avaliarPesquisa(avaliacao){
+                var idPesquisa = document.getElementById('idPesquisa').value
+                console.log('Avaaliação para a pesquisa ' + idPesquisa + ':' + avaliacao)
+                window.location.href = 'AgradecimentoParticipacao.html?id=' + idPesquisa
+            }
+
+        </script>
+
     </body>
 
 </html>
