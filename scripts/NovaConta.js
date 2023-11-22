@@ -1,10 +1,17 @@
+function gerarIdUnico(){
+    return Math.floor(Math.random() * Date.now())
+}
+
+
 function cadastrarUsuario() {
     var email = document.getElementById('txtEmail').value;
     var senha = document.getElementById('txtSenha').value;
+    var idUsuario = gerarIdUnico()
     var senhaRepetir = document.getElementById('txtSenhaRepetir').value;
 
     if (senha === senhaRepetir) {
         var novoUsuario = {
+            id: idUsuario,
             email: email,
             senha: senha
         };
