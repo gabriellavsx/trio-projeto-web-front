@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 function cadastrarPesquisa(){
 
@@ -25,7 +24,7 @@ function cadastrarPesquisa(){
     window.location.href = 'Home.html';
 
 }
-=======
+
 function obterIdUsuarioLogado(){
     return localStorage.getItem('idUsuario') || null
 }
@@ -59,4 +58,4 @@ function cadastrarPesquisa(){
     window.location.href = 'Home.html';
 
 }
->>>>>>> 7c7c1da77946aa958d9e13a0e8ef573ace69c392
+
