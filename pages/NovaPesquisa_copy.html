@@ -11,7 +11,7 @@
     <script>
 
     function gerarIdPesquisa(){
-        return Math.floor(Math.random() * Date.now())
+        return Math.floor(Math.random() * 100)+1;
     }
 
 
@@ -20,7 +20,7 @@
         var nomePesquisa = document.getElementById('txtNomePesquisa').value;
         var dataPesquisa = document.getElementById('dtPesquisa').value;
         var imgPesquisaInput = document.getElementById('imgPesquisa');
-        var idPesquisa = gerarIdPesquisa()
+        var idPesquisa = gerarIdPesquisa();
 
         // Verifique se um arquivo foi selecionado
         if (imgPesquisaInput.files.length > 0) {
