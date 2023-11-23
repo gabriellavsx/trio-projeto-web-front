@@ -50,21 +50,39 @@
             </main>
 
             <script>
+                //função para pegar o id da pesquisa no onclick e comparar com o id que esta no localstorage
+
+                //função para recuperar os id das pesquisas que estão no local stoRAGE,
+                //é preciso compara com os que foram associados ao cards, mas os dos cards,
+                //tem que ser igual ao id da pesquisa
+                onclick = function recuperarId(){
+                    var pesquisas = JSON.parse(localStorage.getItem('listaPesquisa')) || [];
+                    var id = pesquisas.idPesquisa;
+                    for(var i=0; i<=id.length; i++){
+                         /*if(id == id  associado aocard){
+
+                         }*/
+                    }
+                }
                 function alterarPesquisa(){
                     var novoNome = document.getElementById('txtNomePesquisa').value;
                     var novaData = document.getElementById('dtPesquisa').value;
                     var novaImagem = document.getElementById('imgPesquisa').value;
+                    var idUsuario = obterIdUsuarioLogado();
+                    var idPesquisa = gerarIdPesquisa();
 
                     //criação do objeto
                     var editaPesquisa = {
                         novoNome: novoNome,
                         novaData: novaData,
-                        novaImagem: novaPesquisa
+                        novaImagem: novaPesquisa,
+                        idUsuario: idUsuario,
+                        idPesquisa: idPesquisa
                     };
 
                     // Recupera a lista de pesquisas do localStorage
                     var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
-
+                    var buscarId = localStorage.setItem('idPesquisa')
                     //substituir os dados antigos pelo os novos, talvez pelo o indice?
                     
 

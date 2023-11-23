@@ -47,7 +47,6 @@
                 var containerPesquisa = document.getElementById('containerPesquisa');
                 var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
                 var idUsuarioLogado = obterIdUsuarioLogado();
-        
                 // Limpar o conteúdo atual do containerPesquisa
                 containerPesquisa.innerHTML = '';
         
@@ -84,6 +83,9 @@
                             divPesquisa.appendChild(pesquisaData);
 
                             containerPesquisa.appendChild(divPesquisa);
+
+                            //cada card tem que receber o url da sua pesquisa 
+                            //?
         
                             // Adicione um ouvinte de eventos para cada div de pesquisa
                             divPesquisa.addEventListener('click', function () {
