@@ -24,7 +24,7 @@
 
         <main>
             <div class="acoes">
-                <a class="opcao" href="ModificarPesquisa.html">
+                <a class="opcao" href="ModificarPesquisa.html" id="modificarLink">
                     <i class="material-symbols-outlined">contract_edit</i>
                     <p>Modificar</p>
                 </a>
@@ -45,8 +45,8 @@
                 return urlParams.get('id');
             }
 
-            const idPesquisa = obterIdPesquisaDaURL();
-            console.log('ID da Pesquisa:', idPesquisa);
+            const modificarLink = document.getElementById('modificarLink')
+            modificarLink.href = `ModificarPesquisa.html?id=${obterIdPesquisaDaURL()}`
         </script>
     </body>
 

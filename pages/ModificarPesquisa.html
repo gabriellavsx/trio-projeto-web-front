@@ -24,7 +24,7 @@
 
             <main>
                 <div class="container">
-                    <form action="Home.html" method="get">
+                    <form onsubmit="alterarPesquisa(); return false" action="Home_copy.html" method="get">
                         <h2 class="tituloForm">Atualize os dados da pesquisa</h2>
                         
                         <div class="form-group">
@@ -55,39 +55,67 @@
                 //função para recuperar os id das pesquisas que estão no local stoRAGE,
                 //é preciso compara com os que foram associados ao cards, mas os dos cards,
                 //tem que ser igual ao id da pesquisa
-                onclick = function recuperarId(){
-                    var pesquisas = JSON.parse(localStorage.getItem('listaPesquisa')) || [];
-                    var id = pesquisas.idPesquisa;
-                    for(var i=0; i<=id.length; i++){
-                         /*if(id == id  associado aocard){
+                // onclick = function recuperarId(){
+                //     var pesquisas = JSON.parse(localStorage.getItem('listaPesquisa')) || [];
+                //     var id = pesquisas.idPesquisa;
+                //     for(var i=0; i<=id.length; i++){
+                //          /*if(id == id  associado aocard){
 
-                         }*/
-                    }
-                }
-                function alterarPesquisa(){
+                //          }*/
+                //     }
+                // }
+                // function alterarPesquisa(){
+                //     var novoNome = document.getElementById('txtNomePesquisa').value;
+                //     var novaData = document.getElementById('dtPesquisa').value;
+                //     var novaImagem = document.getElementById('imgPesquisa').value;
+                //     var idUsuario = obterIdUsuarioLogado();
+                //     var idPesquisa = gerarIdPesquisa();
+
+                //     //criação do objeto
+                //     var editaPesquisa = {
+                //         novoNome: novoNome,
+                //         novaData: novaData,
+                //         novaImagem: novaPesquisa,
+                //         idUsuario: idUsuario,
+                //         idPesquisa: idPesquisa
+                //     };
+
+
+                //     // Recupera a lista de pesquisas do localStorage
+                //     var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+                //     var buscarId = localStorage.setItem('idPesquisa')
+                //     //substituir os dados antigos pelo os novos, talvez pelo o indice?  
+                // }
+
+                var idPesquisa = obterIdPesquisaDaURL();
+
+                function alterarPesquisa() {
                     var novoNome = document.getElementById('txtNomePesquisa').value;
                     var novaData = document.getElementById('dtPesquisa').value;
                     var novaImagem = document.getElementById('imgPesquisa').value;
-                    var idUsuario = obterIdUsuarioLogado();
-                    var idPesquisa = gerarIdPesquisa();
 
-                    //criação do objeto
-                    var editaPesquisa = {
-                        novoNome: novoNome,
-                        novaData: novaData,
-                        novaImagem: novaPesquisa,
-                        idUsuario: idUsuario,
-                        idPesquisa: idPesquisa
-                    };
-
-                    // Recupera a lista de pesquisas do localStorage
                     var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
-                    var buscarId = localStorage.setItem('idPesquisa')
-                    //substituir os dados antigos pelo os novos, talvez pelo o indice?
-                    
 
-                    
+                    var pesquisaIndex = listaPesquisas.findIndex(function (pesquisa) {
+                        return pesquisa.idPesquisa == idPesquisa;
+                    });
+
+                    if (pesquisaIndex !== -1) {
+                        listaPesquisas[pesquisaIndex].nomePesquisa = novoNome;
+                        listaPesquisas[pesquisaIndex].dataPesquisa = novaData;
+                        listaPesquisas[pesquisaIndex].imagemPesquisa = novaImagem;
+                    }
+                    localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
+
+                    window.location.href = 'Home_copy.html';
                 }
+
+                function obterIdPesquisaDaURL() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get('id');
+                }
+
+
             </script>
     </body>
 
