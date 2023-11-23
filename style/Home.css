@@ -35,6 +35,13 @@ a{
 
 .container-wrapper {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 60vh;
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .tituloPagina{
@@ -89,7 +96,7 @@ a{
 }
 
 .busca-container{
-   position: fixed;
+   position: absolute;
     top: 100px; /* Ajuste a posição vertical conforme necessário */
     left: 50%; /* Coloca no centro horizontalmente */
     transform: translateX(-50%); /* Corrige a posição horizontalmente */
