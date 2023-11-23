@@ -1,7 +1,9 @@
-function gerarIdUnico(){
+/*function gerarIdUnico(){
     return Math.floor(Math.random() * Date.now())
+}*/
+function gerarIdUnico(){
+    return Math.floor(Math.random() * 100) +1;
 }
-
 
 function cadastrarUsuario() {
     var email = document.getElementById('txtEmail').value;
