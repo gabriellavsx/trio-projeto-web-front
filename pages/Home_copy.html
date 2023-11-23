@@ -113,12 +113,17 @@
             function filtrarPesquisas() {
                 var inputBusca = document.querySelector('.busca-input');
                 var termoBusca = inputBusca.value.toLowerCase();
-        
+
                 var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+                var idUsuarioLogado = obterIdUsuarioLogado();
+
                 var pesquisasFiltradas = pesquisas.filter(function (pesquisa) {
-                    return pesquisa.nomePesquisa.toLowerCase().includes(termoBusca);
+                    return (
+                        pesquisa.idUsuario === idUsuarioLogado &&
+                        pesquisa.nomePesquisa.toLowerCase().includes(termoBusca)
+                    );
                 });
-        
+
                 exibirPesquisasFiltradas(pesquisasFiltradas);
             }
         
