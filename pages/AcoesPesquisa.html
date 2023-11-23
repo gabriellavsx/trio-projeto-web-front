@@ -38,6 +38,16 @@
                 </a>
             </div>
         </main>
+
+        <script>
+            function obterIdPesquisaDaURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('id');
+            }
+
+            const idPesquisa = obterIdPesquisaDaURL();
+            console.log('ID da Pesquisa:', idPesquisa);
+        </script>
     </body>
 
 </html>
