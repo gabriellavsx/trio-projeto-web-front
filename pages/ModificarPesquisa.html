@@ -56,7 +56,9 @@
                 function alterarPesquisa() {
                     var novoNome = document.getElementById('txtNomePesquisa').value;
                     var novaData = document.getElementById('dtPesquisa').value;
-                    var novaImagem = document.getElementById('imgPesquisa').value;
+
+                    var novaImagemInput = document.getElementById('imgPesquisa');
+                    var novaImagem = novaImagemInput.files[0]
 
                     var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
 
@@ -67,11 +69,22 @@
                     if (pesquisaIndex !== -1) {
                         listaPesquisas[pesquisaIndex].nomePesquisa = novoNome;
                         listaPesquisas[pesquisaIndex].dataPesquisa = novaData;
-                        listaPesquisas[pesquisaIndex].imagemPesquisa = novaImagem;
-                    }
-                    localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
+                        
+                        if(novaImagem){
+                            var leitor = new FileReader();
+                            leitor.onload = function(e) {
+                                listaPesquisas[pesquisaIndex].imagemPesquisa = e.target.result;
+                                localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
+                                window.location.href = 'Home_copy.html';
+                            };
+                            leitor.readAsDataURL(novaImagem);
+                        }
 
-                    window.location.href = 'Home_copy.html';
+                    } else{
+                        localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
+                        window.location.href = 'Home_copy.html';
+                    }
+                    
                 }
 
                 function obterIdPesquisaDaURL() {
