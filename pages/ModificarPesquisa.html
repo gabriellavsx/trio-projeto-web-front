@@ -54,19 +54,23 @@
                     var novoNome = document.getElementById('txtNomePesquisa').value;
                     var novaData = document.getElementById('dtPesquisa').value;
                     var novaImagem = document.getElementById('imgPesquisa').value;
+                    var idUsuario = obterIdUsuarioLogado();
+                    var idPesquisa = gerarIdPesquisa();
 
                     //criação do objeto
                     var editaPesquisa = {
                         novoNome: novoNome,
                         novaData: novaData,
-                        novaImagem: novaPesquisa
+                        novaImagem: novaPesquisa,
+                        idUsuario: idUsuario,
+                        idPesquisa: idPesquisa
                     };
 
                     // Recupera a lista de pesquisas do localStorage
                     var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
-
+                    var buscarId = localStorage.getItem('idPesquisa')
                     //substituir os dados antigos pelo os novos, talvez pelo o indice?
-                    
+                    if(bucarId == onclick);
 
                     
                 }
