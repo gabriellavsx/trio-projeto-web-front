@@ -1,3 +1,9 @@
+
+function obterIdPesquisaDaURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
+
 var idPesquisa = obterIdPesquisaDaURL();
 
 function alterarPesquisa() {
@@ -34,7 +40,18 @@ function alterarPesquisa() {
     
 }
 
-function obterIdPesquisaDaURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('id');
+
+function excluirPesquisa() {
+    var listaPesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
+
+    var pesquisaIndex = listaPesquisas.findIndex(function (pesquisa) {
+        return pesquisa.idPesquisa == idPesquisa;
+    });
+
+    if (pesquisaIndex !== -1) {
+        listaPesquisas.splice(pesquisaIndex,1);
+        window.location.href = 'Home_copy.html';
+    }
+    localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
+
 }
