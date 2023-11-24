@@ -120,3 +120,37 @@ input[type="button"]{
     margin-top: 3px;
     margin-right: 10px;
 }
+
+.popup-container{
+    width: 506px;
+    height: 253px;
+    background-color: #2B1F5C;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+.botaoSim{
+    font-family: Averia Libre, Arial, Helvetica, sans-serif;
+    background-color: #FF8383;
+    color: #fff;
+    width:216px;
+    height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.botaoNao{
+    font-family: Averia Libre, Arial, Helvetica, sans-serif;
+    background-color:#3F92C5;
+    color: #fff;
+    width:216px;
+    height: 50px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.tituloPop{
+    color: white;
+    font-size: 35px;
+}
