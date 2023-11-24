@@ -15,6 +15,7 @@ main{
     margin: auto;
 }
 
+/* cards */
 .container{
     position: relative;
     width: 300px;
@@ -30,22 +31,30 @@ main{
     cursor: pointer;
 }
 
-a{
-    text-decoration: none;
-}
-
 .container-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content:space-around;
     align-items: center;
     width: 90vw;
     height: 60vh;
     gap: 10px;
     margin-top: 50px;
+    max-width: 1200px;
 }
 
+.subtituloBox{
+    font-size:15px;
+    color:gray;
+    position: absolute;
+    margin-top: 215px;   
+}
+
+
+/* navbar */
 .tituloPagina{
+    max-width: 100%;
+    width: 100%;
     color: #fff;
     text-align: left;
     font-weight: bold;
@@ -69,9 +78,63 @@ a{
     position: absolute;
     width: 100%;
     top: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
 }
 
+.botaoNovaPesquisa{
+    background-color:#37BD6D;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+.containerBotao{
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:20px;
+    right: 100px;
+    font-size: 1.2em;
+    margin-left: 1em;
+            
+}
+
+.containerSair{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top:30px;
+    right: 50px;
+    margin-left: 1em;
+}
+
+.sair{
+    color: #3F92C5;
+    font-size: 18px;
+}
+
+
+
+
+a{
+    text-decoration: none;
+}
+
+
+/* ícones */
 .icon{
     width: 100px;
     height: 100px;
@@ -89,13 +152,8 @@ a{
     margin-right: 10px;
 }
 
-.subtituloBox{
-    font-size:15px;
-    color:gray;
-    position: absolute;
-    margin-top: 215px;   
-}
 
+/* container de busca */
 .busca-container{
    position: absolute;
     top: 100px; /* Ajuste a posição vertical conforme necessário */
@@ -121,44 +179,20 @@ a{
 
 }
 
-.botaoNovaPesquisa{
-    background-color:#37BD6D;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: 1px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.containerBotao{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: auto;
-    height: auto;
-    top:20px;
-    right: 100px;
-            
-}
-
-.containerSair{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: auto;
-    height: auto;
-    top:30px;
-    right: 50px;
-}
-
-.sair{
-    color: #3F92C5;
-    font-size: 18px;
-}
 
 .textoSemPesquisa{
     font-size: 35px;
     color: white;
+}
+
+.menu-hamburger{
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+}
+@media screen and (max-width: 500px) {
+    .menu-hamburger{
+        display: block;
+    }
 }
