@@ -51,6 +51,7 @@ function excluirPesquisa() {
     if (pesquisaIndex !== -1) {
         listaPesquisas.splice(pesquisaIndex,1);
         window.location.href = 'Home_copy.html';
+        localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
     }
     localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
 
