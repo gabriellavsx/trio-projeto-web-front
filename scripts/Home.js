@@ -1,4 +1,3 @@
-
 function obterIdUsuarioLogado() {
     return localStorage.getItem('idUsuario');
 }

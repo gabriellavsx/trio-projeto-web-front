@@ -39,7 +39,7 @@ main{
     width: 90vw;
     height: 60vh;
     gap: 10px;
-    margin-top: 50px;
+    margin-top: 80px;
     max-width: 1200px;
 }
 
@@ -126,9 +126,6 @@ main{
     font-size: 18px;
 }
 
-
-
-
 a{
     text-decoration: none;
 }
@@ -185,14 +182,3 @@ a{
     color: white;
 }
 
-.menu-hamburger{
-    display: none;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 10px;
-}
-@media screen and (max-width: 500px) {
-    .menu-hamburger{
-        display: block;
-    }
-}
