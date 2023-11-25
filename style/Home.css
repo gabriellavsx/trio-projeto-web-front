@@ -182,3 +182,73 @@ a{
     color: white;
 }
 
+@media screen and (max-width: 500px){
+
+    .tituloPagina{
+        margin-top: 5px;
+        font-size: 26px;
+    }
+
+    .navbar{
+        position: absolute;
+        width: 100%;
+        display: flex;
+    }
+    
+    .botaoNovaPesquisa{
+        font-size: 15px;
+        margin-top: -10px ;
+    }
+
+    .icon-smile{
+        width: 30px;
+        height: 30px;
+        margin-top: 3px;
+        margin-right: 8px;
+        margin-left: 5px;
+    }
+    
+    .containerBotao{
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        position: absolute;
+        width: 50px;
+        height: auto;
+        
+                
+    }
+    
+    .containerSair{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: auto;
+        height: auto;
+        top:60px;
+        right: 50px;
+        margin-left: 1em;
+    }
+    
+    .sair{
+        color: #3F92C5;
+        font-size: 18px;
+    }
+
+    .busca-container {
+        position: absolute;
+        top: 80px;
+        left: 165px;
+        width: 90%;
+        max-width: 250px; /* Ajuste para um valor menor */
+        margin-top: 20px;
+    }
+
+    .busca-input {
+        padding-left: 40px;
+        padding-right: 40px;
+        width: 100%;
+    }
+
+}
+
