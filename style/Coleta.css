@@ -39,7 +39,6 @@ h1 {
 
 .avaliacao {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
     margin-top: 50px;
@@ -56,4 +55,19 @@ h1 {
     line-height: 43px;
     color: #FFFFFF;
     text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+    .avaliacao{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tituloPergunta {
+        margin: 5px;
+        text-align: center;
+    }
+    h1{
+        font-size: 40px;
+    }
 }
