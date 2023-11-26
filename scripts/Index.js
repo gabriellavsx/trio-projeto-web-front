@@ -33,7 +33,7 @@ function login() {
 
     if (usuarioAutenticado) {
         localStorage.setItem('idUsuario', usuarioAutenticado.id); 
-        window.location.href = 'Home_copy.html';
+        window.location.href = 'Home.html';
     } else {
         document.getElementById('invalidos').innerHTML = 'E-mail/Senha inválidos';
     }

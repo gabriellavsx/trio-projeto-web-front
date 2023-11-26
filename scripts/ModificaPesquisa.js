@@ -28,14 +28,14 @@ function alterarPesquisa() {
             leitor.onload = function(e) {
                 listaPesquisas[pesquisaIndex].imagemPesquisa = e.target.result;
                 localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
-                window.location.href = 'Home_copy.html';
+                window.location.href = 'Home.html';
             };
             leitor.readAsDataURL(novaImagem);
         }
 
     } else{
         localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
-        window.location.href = 'Home_copy.html';
+        window.location.href = 'Home.html';
     }
     
 }
@@ -50,7 +50,7 @@ function excluirPesquisa() {
 
     if (pesquisaIndex !== -1) {
         listaPesquisas.splice(pesquisaIndex,1);
-        window.location.href = 'Home_copy.html';
+        window.location.href = 'Home.html';
         localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));
     }
     localStorage.setItem('listaPesquisas', JSON.stringify(listaPesquisas));

@@ -1,56 +1,52 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style/NovaPesquisa.css">
-        <title>Satisfying.you</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/NovaPesquisa.css">
+    <title>Satisfying.you</title>
 
-    <body>
+</head>
+
+<body>
 
     <a href="Home.html">
         <div class="tituloPagina">
             <img class="icon-smile" src="../icons/smile-icon.png" alt="">
             <header>Satisfying.you</header>
-        </div>   
+        </div>
     </a>
-        <main>
-            <div class="container">
-                <form>
-                    <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
-                    
-                    <div class="form-group">
-                        <label for="txtNomePesquisa">Nome da pesquisa</label>
-                        <input type="text" id="txtNomePesquisa" name="nomePesquisa" placeholder="Carnaval 2023"><br>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="dtPesquisa">Data</label>
-                        <input type="text" id="dtPesquisa" name="dataPesq" placeholder="22/03/2023"><br>
-                    </div>
-        
-                    <div class="form-group">
-                        <label for="imgPesquisa">Imagem</label>
-                        <input type="file" id="imgPesquisa" name="imgPesq"><br>    
-                    </div>
-        
-                    <div class="containerImg">
-                        <img src="../assets/mascara.png" alt="">
-                    </div>
+    <main>
+        <div class="container">
+            <form>
+                <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
 
-                    <div class="containerCriar">
-                        <input type="button" value="Criar" onclick="cadastrarPesquisa()">
-                    </div>
-                </form>
-            </div>
-        </main>
+                <div class="form-group">
+                    <label for="txtNomePesquisa">Nome da pesquisa</label>
+                    <input type="text" id="txtNomePesquisa" name="nomePesquisa" placeholder="Carnaval 2023" required><br>
+                </div>
 
-        <script src="../scripts/NovaPesquisa.js"></script>
+                <div class="form-group">
+                    <label for="dtPesquisa">Data</label>
+                    <input type="text" id="dtPesquisa" name="dataPesquisa" placeholder="22/03/2023" required><br>
+                </div>
 
-    </body>
+                <div class="form-group">
+                    <label for="imgPesquisa">Imagem</label>
+                    <input type="file" id="imgPesquisa" name="imagemPesquisa" accept="image/*" required><br>
+                </div>
 
+                
+
+                <div class="containerCriar">
+                    <input type="button" value="Criar" onclick="adicionarPesquisa()">
+                </div>
+            </form>
+        </div>
+    </main>
+<script src="../scripts/NovaPesquisa.js"></script>
+   
+</body>
 
 </html>

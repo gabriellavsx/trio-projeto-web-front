@@ -10,7 +10,7 @@ function mostrarPesquisas() {
     var containerPesquisa = document.getElementById('containerPesquisa');
     var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
     var idUsuarioLogado = obterIdUsuarioLogado();
-    // Limpar o conteúdo atual do containerPesquisa
+
     containerPesquisa.innerHTML = '';
 
     if (pesquisas.length > 0) {
@@ -49,10 +49,6 @@ function mostrarPesquisas() {
 
                 containerPesquisa.appendChild(divPesquisa);
 
-                //cada card tem que receber o url da sua pesquisa 
-                //?
-
-                // Adicione um ouvinte de eventos para cada div de pesquisa
                 divPesquisa.addEventListener('click', function () {
                     window.location.href = 'AcoesPesquisa.html?id=' + pesquisa.idPesquisa;
                 });
@@ -121,7 +117,6 @@ function exibirPesquisasFiltradas(pesquisas) {
 
             containerPesquisa.appendChild(divPesquisa);
 
-            // Adicione um ouvinte de eventos para cada div de pesquisa
             divPesquisa.addEventListener('click', function () {
                 window.location.href = 'AcoesPesquisa.html';
             });
@@ -134,5 +129,4 @@ function exibirPesquisasFiltradas(pesquisas) {
     }
 }
 
-// Adicione um ouvinte de eventos para o campo de busca
 document.querySelector('.busca-input').addEventListener('input', filtrarPesquisas);
