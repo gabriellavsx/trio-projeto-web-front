@@ -1,7 +1,9 @@
+//retornar id usuario logado
 function obterIdUsuarioLogado() {
     return localStorage.getItem('idUsuario');
 }
 
+//retornar id da pesquisa
 function obterIdPesquisa(){
     return localStorage.getItem('idPesquisa')
 }
