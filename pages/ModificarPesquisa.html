@@ -19,7 +19,14 @@
             </div>
         </a>
         <div class="canto-direito">
-            <a href="Home.html"><img src="../icons/lixeira.png"class="iconLixeira" onclick="excluirPesquisa()"></a>
+            <a href="#popup-container"><img src="../icons/lixeira.png"class="iconLixeira"></a>
+            <div class="popup-container" id="popup-container">
+                <p class="tituloPop">Tem certeza de apagar essa pesquisa?</p>
+                <div>
+                    <button class="botaoSim" onclick="excluirPesquisa()">SIM</button>
+                    <button class="botaoNao">CANCELAR</button>
+                </div>
+            </div>
             <a href="Index.html" class="linkSair">Sair</a>
         </div>
 
@@ -46,14 +53,7 @@
                         <div class="containerCriar">
                             <input type="button" value="Criar" onclick="alterarPesquisa()">
                         </div>
-                        <!--<div class="popup-container">
-                            <p class="tituloPop">Tem certeza de apagar essa pesquisa?</p>
-                            <div>
-                                <button class="botaoSim" onclick="excluirPesquisa()">SIM</button>
-                                <button class="botaoNao">CANCELAR</button>
-                            </div>
 
-                        </div>-->
                     </form>
                 </div>
             </main>

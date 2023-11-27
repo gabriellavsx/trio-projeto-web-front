@@ -127,11 +127,15 @@ input[type="button"]{
     height: 253px;
     background-color: #2B1F5C;
     position: fixed;
-    display: none;
+    opacity: 0;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    
+}
+.popup:target{
+    opacity: 1;
+    pointer-events: auto;
 }
 .botaoSim{
     font-family: Averia Libre, Arial, Helvetica, sans-serif;

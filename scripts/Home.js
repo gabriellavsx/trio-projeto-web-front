@@ -17,8 +17,6 @@ function mostrarPesquisas() {
 
     if (pesquisas.length > 0) {
         pesquisas.forEach(function (pesquisa) {
-
-
             if (pesquisa.idUsuario === idUsuarioLogado) {
                 var idPesquisa = obterIdPesquisa()
 
