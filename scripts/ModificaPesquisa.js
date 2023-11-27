@@ -1,4 +1,4 @@
-
+//função que extrai o valor do parametro chamadao id da url
 function obterIdPesquisaDaURL() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id');
