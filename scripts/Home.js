@@ -8,6 +8,7 @@ function obterIdPesquisa(){
     return localStorage.getItem('idPesquisa')
 }
 
+//criação de cards
 function mostrarPesquisas() {
     var containerPesquisa = document.getElementById('containerPesquisa');
     var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
