@@ -59,9 +59,7 @@ function mostrarPesquisas() {
         mensagemSemPesquisa.className = "textoSemPesquisa"
         mensagemSemPesquisa.textContent = 'Não há nenhuma pesquisa cadastrada.';
         
-        /*mensagemSemPesquisa.addEventListener('click', function () {
-        
-        });*/
+       
 
         containerPesquisa.appendChild(mensagemSemPesquisa);
     }
