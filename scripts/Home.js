@@ -117,7 +117,7 @@ function exibirPesquisasFiltradas(pesquisas) {
             containerPesquisa.appendChild(divPesquisa);
 
             divPesquisa.addEventListener('click', function () {
-                window.location.href = 'AcoesPesquisa.html';
+                window.location.href = 'AcoesPesquisa.html?id=' + pesquisa.idPesquisa;
             });
         });
     } else {
