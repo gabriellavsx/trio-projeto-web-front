@@ -8,6 +8,7 @@ function obterIdPesquisa(){
     return localStorage.getItem('idPesquisa')
 }
 
+//criação de cards
 function mostrarPesquisas() {
     var containerPesquisa = document.getElementById('containerPesquisa');
     var pesquisas = JSON.parse(localStorage.getItem('listaPesquisas')) || [];
@@ -26,7 +27,7 @@ function mostrarPesquisas() {
                 var imgPesquisa = document.createElement('img');
                 imgPesquisa.src = pesquisa.imagemPesquisa;
                 imgPesquisa.alt = 'ícone';
-                imgPesquisa.style.width = '175px';  
+                imgPesquisa.style.width = '155px';  
                 imgPesquisa.style.height = '150px';
 
                 var pesquisaTitulo = document.createElement('h2');
@@ -97,7 +98,7 @@ function exibirPesquisasFiltradas(pesquisas) {
             var imgPesquisa = document.createElement('img');
             imgPesquisa.src = pesquisa.imagemPesquisa;
             imgPesquisa.alt = 'ícone';
-            imgPesquisa.style.width = '175px';  
+            imgPesquisa.style.width = '155px';  
             imgPesquisa.style.height = '150px'; 
 
             var pesquisaTitulo = document.createElement('h2');
