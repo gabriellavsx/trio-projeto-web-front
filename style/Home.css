@@ -250,7 +250,7 @@ a{
         width: 100%;
     }
 
-    /*.container-wrapper{
+   /* .container-wrapper{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(45%,1fr));
         gap:20px;
