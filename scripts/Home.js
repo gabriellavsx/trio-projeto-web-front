@@ -98,7 +98,7 @@ function exibirPesquisasFiltradas(pesquisas) {
             var imgPesquisa = document.createElement('img');
             imgPesquisa.src = pesquisa.imagemPesquisa;
             imgPesquisa.alt = 'ícone';
-            imgPesquisa.style.width = '175px';  
+            imgPesquisa.style.width = '155px';  
             imgPesquisa.style.height = '150px'; 
 
             var pesquisaTitulo = document.createElement('h2');
